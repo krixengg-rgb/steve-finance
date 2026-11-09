@@ -78,6 +78,20 @@ canvas{max-width:100%}
 .fstats b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;margin:4px 0 2px;font-variant-numeric:tabular-nums}
 @media(max-width:760px){.fstats{grid-template-columns:1fr 1fr}.fstats>div:first-child{grid-column:1/3}.goal{gap:10px}}
 .tabbar{display:none}
+
+.tips{display:flex;flex-direction:column;gap:10px}.tip{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:var(--card2);border:1px solid var(--bd)}
+.tip .ti{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:16px;flex:none;background:color-mix(in srgb,var(--a1) 18%,transparent)}
+.tip.bad .ti{background:color-mix(in srgb,var(--neg) 18%,transparent)}.tip.warn .ti{background:color-mix(in srgb,var(--warn) 18%,transparent)}
+.tip b{display:block;font-size:13.5px;margin-bottom:2px}.tip .td{color:var(--mut);font-size:12.5px;line-height:1.4}
+.sync-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:760px){.sync-grid{grid-template-columns:1fr}}
+.debt-row{display:grid;grid-template-columns:1.4fr .9fr .7fr .9fr auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--bd)}
+.debt-row input{width:100%;padding:7px 8px}.debt-row .del{background:transparent;color:var(--mut);border:0;padding:4px}
+.plan-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}.plan-kpis>div{background:var(--card2);border:1px solid var(--bd);border-radius:12px;padding:10px}.plan-kpis b{display:block;font-size:18px;font-weight:800;margin-top:4px}
+.seg2{display:inline-flex;border:1px solid var(--bd);border-radius:12px;overflow:hidden}.seg2 button{border:0;border-radius:0;background:transparent;color:var(--mut);padding:8px 14px}.seg2 button.on{background:var(--grad);color:#fff}
+.ty-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}.ty-grid>div{background:var(--card2);border:1px solid var(--bd);border-radius:12px;padding:12px}.ty-grid b{display:block;font-size:20px;font-weight:800;margin-top:4px}
+@media(max-width:760px){.ty-grid{grid-template-columns:1fr 1fr}.debt-row{grid-template-columns:1fr 1fr;gap:6px}.debt-row .span2{grid-column:1/-1}.plan-kpis{grid-template-columns:1fr}}
+#backupNudge{display:none}#backupNudge.show{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:color-mix(in srgb,var(--warn) 14%,transparent);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);margin-bottom:14px;font-size:13px}
+
 @media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media(max-width:760px){
  header{padding:12px 16px}header small{display:none}main{padding:16px 14px 96px}.card{padding:16px;border-radius:18px;margin-bottom:14px}
@@ -95,13 +109,30 @@ canvas{max-width:100%}
 <header><div class="logo">£</div><div><h1>Steve <span>Finance</span></h1><small>Private by design · your data never leaves this browser</small></div><span class="hsp"></span><button class="icon-btn" id="theme" title="Toggle light/dark" aria-label="Toggle light or dark theme">☾</button></header>
 <main>
 <div class="card" id="alerts"><b>Alerts</b> <span class="muted" id="alertsSub"></span><ul id="alertList"></ul></div>
-<div class="card"><div class="drop" id="drop"><strong>Drop your statements here</strong>Bank or credit card · CSV or PDF<br><input type="file" id="file" multiple accept=".csv,.pdf"></div>
+<div class="card"><div class="drop" id="drop"><strong>Drop your statements here</strong>Bank or credit card · CSV or PDF<br><input type="file" id="file" multiple accept=".csv,.pdf,.ofx,.qif,.qfx,text/csv,application/pdf"></div>
 <div class="row" style="margin-top:10px"><label>Account name: <input id="acct" value="Current account"></label>
 <label><input type="checkbox" id="flip"> Credit card (positive amounts are spending)</label></div>
-<div class="row" style="margin-top:10px"><button class="alt" id="expCsv">Export CSV</button><button class="alt" id="backup">Backup (JSON)</button>
-<label class="badge" style="padding:7px 10px;cursor:pointer">Restore backup<input type="file" id="restore" accept=".json,application/json" hidden></label>
-<button class="alt" id="notify">Enable bill notifications</button><button class="alt" id="install" hidden>Install app</button>
-<span style="flex:1"></span><button class="red" id="clear">Clear all data</button></div><div id="msg" class="muted" style="margin-top:8px"></div></div>
+<div class="row" style="margin-top:10px"><button class="alt" id="expCsv">Export CSV</button><button class="alt" id="notify">Enable bill notifications</button><button class="alt" id="install" hidden>Install app</button>
+<span style="flex:1"></span><button class="red" id="clear">Clear all data</button></div><div id="msg" class="muted" style="margin-top:8px"></div>
+<div id="backupNudge"><span>⏰ No backup in over a week — export one before you lose your phone or clear the browser.</span><button class="alt" id="nudgeBackup" type="button">Backup now</button></div></div>
+
+<div class="card" id="syncCard"><h3>Sync between devices <span class="muted">· no cloud · file stays on your devices</span></h3>
+<p class="muted" style="margin-top:-8px;margin-bottom:12px">Export an encrypted backup on this PC, copy it to your phone (or the other way), then restore. Each device keeps its own copy — nothing is uploaded.</p>
+<div class="sync-grid">
+<div><label>Optional password (AES-GCM) <input id="syncPass" type="password" placeholder="leave blank for plain JSON" autocomplete="new-password" style="width:100%;margin-top:4px"></label>
+<div class="row" style="margin-top:10px"><button id="syncExport">Export backup</button>
+<label class="badge" style="padding:9px 12px;cursor:pointer">Import / restore<input type="file" id="restore" accept=".json,.stevebackup,application/json" hidden></label></div>
+<div class="row" style="margin-top:8px"><label><input type="radio" name="merge" id="mergeMode" value="merge" checked> Merge (keep both, skip duplicates)</label>
+<label><input type="radio" name="merge" value="replace"> Replace all data</label></div>
+<div class="muted" id="syncInfo" style="margin-top:8px"></div></div>
+<div><b style="font-size:13px">How to sync phone ↔ PC</b>
+<ol class="muted" style="margin:8px 0 0;padding-left:18px;line-height:1.55">
+<li>Export a backup here (set a password if you like).</li>
+<li>Copy the file via USB, email-to-self, OneDrive, or AirDrop — Steve never sees it.</li>
+<li>On the other device open Steve → Sync → Import, pick Merge.</li>
+</ol>
+<div class="muted" id="lastBackup" style="margin-top:10px"></div></div></div></div>
+
 
 <div class="card row toolbar seg">
 <label>Period mode: <select id="pmode"><option value="month">Calendar month</option><option value="payday">Payday to payday</option></select></label>
@@ -138,6 +169,36 @@ canvas{max-width:100%}
 <div><span class="muted">Lowest point</span><b id="fLow">—</b><span class="muted" id="fLowSub"></span></div></div>
 <canvas id="cFc"></canvas><div class="muted" id="fBasis" style="margin-top:8px"></div></div>
 </div>
+
+<div class="grid">
+<div class="card" id="debtsCard"><h3>Debt payoff planner</h3>
+<div id="debtList"></div>
+<form id="debtForm" class="debt-row" style="border:0;margin-top:8px" autocomplete="off">
+<input id="dName" class="span2" placeholder="Debt name" required>
+<input id="dBal" type="number" min="0" step="0.01" placeholder="Balance £" required>
+<input id="dApr" type="number" min="0" step="0.1" placeholder="APR %" required>
+<input id="dMin" type="number" min="0" step="0.01" placeholder="Min £/mo" required>
+<button type="submit">Add</button></form>
+<div class="row" style="margin-top:12px"><label>Extra payment £/mo <input id="dExtra" type="number" min="0" step="10" value="0" style="width:100px"></label>
+<span class="seg2"><button type="button" class="on" data-strat="snowball" id="stratSnow">Snowball</button><button type="button" data-strat="avalanche" id="stratAva">Avalanche</button></span></div>
+<div class="plan-kpis"><div><span class="muted">Payoff date</span><b id="dDate">—</b></div><div><span class="muted">Total interest</span><b id="dInt">—</b></div><div><span class="muted">Saved vs minimums</span><b id="dSaved" class="pos">—</b></div></div>
+<canvas id="cDebt"></canvas>
+<div class="scroll" style="max-height:180px;margin-top:8px"><table><thead><tr><th>Month</th><th>Focus</th><th class="n">Paid</th><th class="n">Interest</th><th class="n">Remaining</th></tr></thead><tbody id="debtPlan"></tbody></table></div>
+</div>
+<div class="card" id="taxCard"><h3>UK tax year <span class="muted" id="taxLabel"></span></h3>
+<div class="row" style="margin-bottom:10px"><label>Year <select id="taxYear"></select></label>
+<button class="alt" id="taxCsv" type="button">Export CSV</button><button class="alt" id="taxPrint" type="button">Print view</button></div>
+<div class="ty-grid"><div><span class="muted">Income</span><b id="tyIn" class="pos">£0</b><span class="muted" id="tyInD"></span></div>
+<div><span class="muted">Spending</span><b id="tyOut" class="neg">£0</b><span class="muted" id="tyOutD"></span></div>
+<div><span class="muted">Net</span><b id="tyNet">£0</b><span class="muted" id="tyNetD"></span></div>
+<div><span class="muted">Transactions</span><b id="tyCnt">0</b></div></div>
+<canvas id="cTax"></canvas>
+<div class="muted" style="margin-top:8px">Top merchants</div>
+<div class="scroll"><table><thead><tr><th>Merchant</th><th class="n">Spent</th></tr></thead><tbody id="taxMer"></tbody></table></div>
+</div>
+</div>
+<div class="card" id="tipsCard"><h3>Smart tips <span class="muted" id="tipCount"></span></h3>
+<div class="tips" id="tipsList"></div></div>
 <div class="grid">
 <div class="card" id="chartsCard"><h3>Spending by category</h3><canvas id="cCat"></canvas></div>
 <div class="card"><h3 id="monTitle">Monthly in vs out</h3><canvas id="cMon"></canvas></div>
@@ -146,7 +207,7 @@ canvas{max-width:100%}
 <div class="card" id="txCard"><h3>Transactions</h3><input id="q" placeholder="Search…" style="width:100%;max-width:320px">
 <div class="scroll"><table class="tx"><thead><tr><th>Date</th><th>Account</th><th>Description</th><th>Category</th><th class="n">Amount</th></tr></thead><tbody id="tb"></tbody></table></div><div class="muted" id="txMore"></div></div>
 </main>
-<nav class="tabbar"><a href="#overview"><i>◎</i>Overview</a><a href="#budgetsCard"><i>▤</i>Budgets</a><a href="#goalsCard"><i>◉</i>Goals</a><a href="#chartsCard"><i>◔</i>Charts</a><a href="#txCard"><i>≡</i>Activity</a></nav>
+<nav class="tabbar"><a href="#overview"><i>◎</i>Home</a><a href="#debtsCard"><i>£</i>Debts</a><a href="#goalsCard"><i>◉</i>Goals</a><a href="#tipsCard"><i>✦</i>Tips</a><a href="#txCard"><i>≡</i>Activity</a></nav>
 <script>
 'use strict';
 if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc=true?'lib/pdf.worker.min.js':'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -190,14 +251,72 @@ function add(rows,acct,flip){let n=0;const have={},inFile={};tx.forEach(t=>{cons
 function fromCSV(text){const d=Papa.parse(text.replace(/^\uFEFF/,''),{header:true,skipEmptyLines:true,transformHeader:h=>h.trim()}).data;if(!d.length)return[];const ks=Object.keys(d[0]),f=re=>ks.find(k=>re.test(k));
  const kd=f(/date/i),kdesc=f(/desc|narr|details|merchant|payee|memo|reference|name/i),ka=f(/^amount|value/i),ki=f(/paid in|credit|money in/i),ko=f(/paid out|debit|money out/i);
  if(!kd)return[];return d.map(r=>({date:pDate(r[kd]),desc:r[kdesc]||'',amt:ka&&r[ka]!==''&&r[ka]!=null?num(r[ka]):num(r[ki])-Math.abs(num(r[ko]))}))}
-async function fromPDF(buf){if(!window.pdfjsLib)throw new Error('PDF reader not loaded');const pdf=await pdfjsLib.getDocument({data:buf}).promise;let out=[];
- for(let p=1;p<=pdf.numPages;p++){const c=await(await pdf.getPage(p)).getTextContent();const lines={};c.items.forEach(i=>{const y=Math.round(i.transform[5]);(lines[y]=lines[y]||[]).push(i)});
-  Object.keys(lines).sort((a,b)=>b-a).forEach(y=>{const s=lines[y].sort((a,b)=>a.transform[4]-b.transform[4]).map(i=>i.str).join(' ').replace(/\s+/g,' ').trim();
-  const m=s.match(/^(\d{1,2}[\/\-. ](?:\d{1,2}|[A-Za-z]{3})[\/\-. ]\d{2,4})\s+(.+?)\s+(-?£?[\d,]+\.\d{2}(?:\s?(?:CR|DR))?)(?:\s+-?£?[\d,]+\.\d{2}(?:\s?(?:CR|DR))?)?$/);
-  if(m){let a=num(m[3]);if(!/CR/i.test(m[3])&&a>0&&!/salary|wages|credit|refund|payment received/i.test(m[2]))a=-a;out.push({date:pDate(m[1]),desc:m[2],amt:a})}})}return out}
-async function handle(files){let tot=0,errs=[];for(const f of files){const acct=$('acct').value.trim()||'Account',flip=$('flip').checked;
- try{const rows=f.name.toLowerCase().endsWith('.pdf')?await fromPDF(await f.arrayBuffer()):fromCSV(await f.text());tot+=add(rows,acct,flip)}catch(e){errs.push(f.name+': '+e.message)}}
- $('msg').textContent=`Added ${tot} new transactions (duplicates skipped).`+(errs.length?' Problems: '+errs.join('; '):'')+' PDF layouts vary between banks: if one looks wrong, export a CSV instead.';render();maybeNotify()}
+
+async function fromPDF(buf){if(!window.pdfjsLib)throw new Error('PDF reader not loaded');const pdf=await pdfjsLib.getDocument({data:buf}).promise;let lines=[];
+ for(let p=1;p<=pdf.numPages;p++){const c=await(await pdf.getPage(p)).getTextContent();const by={};c.items.forEach(i=>{const y=Math.round(i.transform[5]);(by[y]=by[y]||[]).push(i)});
+  Object.keys(by).sort((a,b)=>b-a).forEach(y=>{const s=by[y].sort((a,b)=>a.transform[4]-b.transform[4]).map(i=>i.str).join(' ').replace(/\s+/g,' ').trim();if(s)lines.push(s)})}
+ return parsePdfLines(lines)}
+function parsePdfLines(lines){const out=[],noise=/^(date|description|details|transaction|paid (in|out)|money (in|out)|amount|balance|page \d|statement|account|sort code|continued|payment type|type$|barclays|lloyds|halifax|natwest|rbs|hsbc|nationwide|santander|monzo|starling|barclaycard|total|opening|closing)/i;
+ const dateRe=/(\d{1,2}[\/\-. ](?:\d{1,2}|[A-Za-z]{3,9})[\/\-. ]\d{2,4}|\d{4}-\d{2}-\d{2})/;
+ const moneyRe=/-?£?[\d,]+\.\d{2}(?:\s?(?:CR|DR))?/g;
+ for(const raw of lines){if(noise.test(raw)||raw.length<8)continue;
+  const dm=raw.match(dateRe);if(!dm)continue;const date=pDate(dm[1]);if(!date)continue;
+  const after=raw.slice(raw.indexOf(dm[1])+dm[1].length).trim();
+  const monies=[...after.matchAll(moneyRe)].map(m=>({t:m[0],i:m.index,v:num(m[0])}));
+  if(!monies.length)continue;
+  // drop trailing running-balance if 2+ amounts and last looks like a balance (larger / not CR-DR tagged preference)
+  let amts=monies.slice();
+  if(amts.length>=2){const last=amts[amts.length-1];
+   // Heuristic: if two money columns (paid out / paid in) + balance → take non-zero paid columns; if one amount + balance → take first
+   if(amts.length>=3){const a=amts[0],b=amts[1]; // paid out, paid in
+    let v=0;if(Math.abs(a.v)>0&&Math.abs(b.v)===0)v=-Math.abs(a.v);else if(Math.abs(b.v)>0&&Math.abs(a.v)===0)v=Math.abs(b.v);else if(a.v&&!b.v)v=-Math.abs(a.v);else v=b.v?-Math.abs(a.v)+Math.abs(b.v):-Math.abs(a.v);
+    const desc=after.slice(0,a.i).replace(/\b(D\/D|C\/R|DEB|DD|SO|BP|VIS|POS|TFR)\b/gi,' ').replace(/\s+/g,' ').trim();
+    if(desc&&!/^balance/i.test(desc))out.push({date,desc,amt:Math.round(v*100)/100});continue}
+   // 2 amounts: amount + balance OR paid-out + paid-in
+   const a=amts[0],b=amts[1];
+   if(/CR/i.test(a.t)||/DR/i.test(a.t)){let v=a.v;if(/DR/i.test(a.t))v=-Math.abs(v);else if(/CR/i.test(a.t))v=Math.abs(v);
+    const desc=after.slice(0,a.i).trim();if(desc)out.push({date,desc,amt:v});continue}
+   // if second is much larger absolute → likely balance
+   if(Math.abs(b.v)>Math.abs(a.v)*1.5||(Math.abs(a.v)>0&&Math.abs(b.v)>0&&Math.abs(a.v)<10000)){
+    // paid out / paid in without labels: if one is zero-ish use the other; else prefer first as debit when both nonzero rare
+    let v;if(Math.abs(b.v)===0)v=-Math.abs(a.v);else if(Math.abs(a.v)===0)v=Math.abs(b.v);else v=a.v; // amount then balance
+    // When both nonzero and second larger → amount,balance
+    if(Math.abs(b.v)>Math.abs(a.v)){v=/^\+/.test(a.t)||a.v>0&&!/salary|credit|payment received|thank you/i.test(after)?(a.v>0&&!/salary|wages|credit|refund|payment received|thank you/i.test(after)?-Math.abs(a.v):a.v):a.v;
+     if(a.v>0&&!/CR|\+|salary|wages|credit|refund|payment received|thank you/i.test(a.t+after.slice(0,a.i)))v=-Math.abs(a.v);
+     else if(a.v<0)v=a.v; else v=a.v}
+    let desc=after.slice(0,a.i).replace(/\b(D\/D|C\/R|DEB|DD|SO|BP)\b/gi,' ').replace(/\s+/g,' ').trim();
+    if(desc){desc=desc.replace(/\s*[+\-]?£?[\d,]*$/,'').trim();let vv=v;if(vv>0&&!/salary|wages|credit|refund|payment received|thank you/i.test(desc)&&!/CR/i.test(a.t)&&!/^\+/.test(a.t.trim()))vv=-Math.abs(vv);
+     out.push({date,desc,amt:Math.round(vv*100)/100})}continue}}
+  // single amount
+  const a=amts[0];let v=a.v;let desc=after.slice(0,a.i).replace(/\b(D\/D|C\/R|DEB)\b/gi,' ').replace(/\s+/g,' ').trim();
+  if(!desc)continue;desc=desc.replace(/\s*[+\-]?£?[\d,]*$/,'').replace(/\b(D\/D|C\/R|DEB)\b/gi,'').replace(/\s+/g,' ').trim();
+  if(/DR/i.test(a.t))v=-Math.abs(v);else if(/CR/i.test(a.t)||/^\+/.test(a.t.trim()))v=Math.abs(v);
+  else if(v>0&&!/salary|wages|credit|refund|payment received|thank you|interest/i.test(desc))v=-Math.abs(v);
+  out.push({date,desc,amt:Math.round(v*100)/100})}
+ // Filter obvious header leftovers
+ return out.filter(t=>t.date&&t.desc&&t.amt&&t.desc.length>1)}
+function fromOFX(text){const out=[],blocks=text.split(/<STMTTRN>/i).slice(1);
+ for(const b of blocks){const g=re=>{const m=b.match(re);return m?m[1].trim():''};
+  const dt=g(/<DTPOSTED[^>]*>([0-9]{8})/i),amt=parseFloat(g(/<TRNAMT[^>]*>([^\s<]+)/i)),desc=g(/<NAME[^>]*>([^<]+)/i)||g(/<MEMO[^>]*>([^<]+)/i)||g(/<PAYEE[^>]*>([^<]+)/i);
+  if(!dt||!amt)continue;const date=dt.slice(0,4)+'-'+dt.slice(4,6)+'-'+dt.slice(6,8);
+  out.push({date,desc:desc||'OFX',amt:Math.round(amt*100)/100})}return out}
+function fromQIF(text){const out=[],rows=text.replace(/\r/g,'').split(/\n\^/);
+ for(const r of rows){let date=null,amt=null,desc='';
+  for(const line of r.split('\n')){if(!line)continue;const k=line[0],v=line.slice(1);
+   if(k==='D')date=pDate(v);else if(k==='T'||k==='U')amt=num(v);else if(k==='P'||k==='M'||k==='N'){if(!desc)desc=v;else if(k==='P')desc=v}}
+  if(date&&amt)out.push({date,desc:desc||'QIF',amt:Math.round(amt*100)/100})}return out}
+async function readFileRows(f){const name=f.name.toLowerCase();
+ if(name.endsWith('.pdf')){let rows;try{rows=await fromPDF(await f.arrayBuffer())}catch(err){throw new Error('could not read this PDF ('+err.message+') — try a CSV export from your banking app instead')}if(!rows.length)throw new Error('could not find transactions in this PDF — try a CSV export from your banking app instead');return rows}
+ if(name.endsWith('.ofx')||name.endsWith('.qfx')){const rows=fromOFX(await f.text());if(!rows.length)throw new Error('no transactions in this OFX file');return rows}
+ if(name.endsWith('.qif')){const rows=fromQIF(await f.text());if(!rows.length)throw new Error('no transactions in this QIF file');return rows}
+ return fromCSV(await f.text())}
+
+async function handle(files){let tot=0,errs=[],emptyPdf=[];for(const f of files){const acct=$('acct').value.trim()||'Account',flip=$('flip').checked;
+ try{let rows=await readFileRows(f);if(flip)rows=rows.map(r=>({...r,amt:-r.amt}));if(!rows.length){if(f.name.toLowerCase().endsWith('.pdf'))emptyPdf.push(f.name);continue}tot+=add(rows,acct,false)}catch(e){errs.push(f.name+': '+e.message)}}
+ let msg=`Added ${tot} new transactions (duplicates skipped).`;
+ if(emptyPdf.length)msg+=` Could not read: ${emptyPdf.join(', ')}. PDF layouts vary — export a CSV from your banking app instead.`;
+ if(errs.length)msg+=' Problems: '+errs.join('; ');
+ $('msg').textContent=msg;render();maybeNotify()}
 
 // ---- payday detection & periods
 function salaryCredits(){return tx.filter(t=>t.amt>0&&t.cat==='Income'&&(/salary|wages|payroll/i.test(t.desc)||t.amt>=500)).sort((a,b)=>a.date.localeCompare(b.date))}
@@ -245,6 +364,7 @@ function budgetRows(p){const spent={};tx.filter(t=>isSpend(t)&&inP(t,p)).forEach
  return ALLCATS.filter(c=>!NOBUDGET.includes(c)).map(c=>({c,b:+budgets[c]||0,spent:Math.round((spent[c]||0)*100)/100}))}
 
 
+const softRender=()=>setTimeout(()=>render(),0);
 // ---- UI: theme, palette, KPIs
 const RM=matchMedia('(prefers-reduced-motion: reduce)');
 const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
@@ -303,7 +423,7 @@ function render(){$('pmode').value=settings.mode;$('paydayBox').style.display=se
  // alerts
  const A=alerts(subs,bp);window._alerts=A;$('alerts').className='card'+(A.length?' show':'');$('alertsSub').textContent=A.length?`(${A.length})`:'';
  $('alertList').innerHTML=A.map(a=>`<li class="al-${a.t}">${a.h}</li>`).join('');
- renderGoals();renderForecast();
+ renderGoals();renderForecast();renderDebts();renderTax();renderTips();updateBackupUI();
  renderTx(f)}
 function renderTx(f){f=f||tx.filter(t=>inP(t,currentPeriod())).sort((a,b)=>b.date.localeCompare(a.date));const q=$('q').value.toLowerCase(),rows=f.filter(t=>!q||t.desc.toLowerCase().includes(q)||t.cat.toLowerCase().includes(q));
  $('tb').innerHTML=rows.slice(0,500).map(t=>`<tr><td class="a">${t.date}</td><td class="a">${esc(t.acct)}</td><td class="d">${esc(t.desc)}</td><td><select aria-label="Category" data-k="${esc(merch(t.desc))}">${ALLCATS.map(c=>`<option${c===t.cat?' selected':''}>${esc(c)}</option>`).join('')}</select></td><td class="n ${t.amt<0?'neg':'pos'}">${GBP(t.amt)}</td></tr>`).join('');
@@ -320,7 +440,10 @@ function draw(id,type,labels,datasets,extra={}){if(!window.Chart)return;charts[i
 
 
 // ---- savings goals & forecast
-let goals=LS('steve_goals',[]);const saveGoals=()=>localStorage.setItem('steve_goals',JSON.stringify(goals));
+let goals=LS('steve_goals',[]),debts=LS('steve_debts',[]),debtStrat=localStorage.getItem('steve_debt_strat')||'snowball';
+const saveGoals=()=>localStorage.setItem('steve_goals',JSON.stringify(goals));
+const saveDebts=()=>{localStorage.setItem('steve_debts',JSON.stringify(debts));localStorage.setItem('steve_debt_strat',debtStrat)};
+
 const monthsBetween=(a,b)=>diff(a,b)/30.44;
 function monthlyBasis(){const today=todayStr(),cm=today.slice(0,7),ms=[...new Set(tx.map(t=>t.date.slice(0,7)))].filter(m=>m<cm).sort().slice(-3);
  const subs=recurring(),keys=new Set(subs.map(s=>s.key));if(!ms.length)return{n:0,subs,income:0,bills:0,variable:0,months:[]};
@@ -359,26 +482,134 @@ function renderForecast(){const h=+$('fHor').value||3,F=forecast(h),S2=safeToSpe
  draw('cFc','line',P.map(p=>fmtD(p.d)),[{label:'Balance',data:P.map(p=>Math.round(p.b*100)/100),borderColor:css('--a2'),backgroundColor:grad('cFc',css('--a2')),fill:true,tension:.3,pointRadius:0,pointHoverRadius:5,borderWidth:2.5}],{plugins:{legend:{display:false}}})}
 $('goalForm').onsubmit=e=>{e.preventDefault();const t=parseFloat($('gTarget').value),dl=$('gDeadline').value;if(!(t>0)||!dl)return;
  goals.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),name:$('gName').value.trim()||'Goal',target:Math.round(t*100)/100,saved:Math.max(0,parseFloat($('gSaved').value)||0),deadline:dl});saveGoals();e.target.reset();render()};
-$('goalList').onchange=e=>{if(!e.target.classList.contains('gsaved'))return;const g=goals.find(x=>x.id===e.target.closest('.goal').dataset.id);g.saved=Math.max(0,parseFloat(e.target.value)||0);saveGoals();render()};
+$('goalList').onchange=e=>{if(!e.target.classList.contains('gsaved'))return;const g=goals.find(x=>x.id===e.target.closest('.goal').dataset.id);g.saved=Math.max(0,parseFloat(e.target.value)||0);saveGoals();softRender()};
 $('goalList').onclick=e=>{if(!e.target.classList.contains('del'))return;const id=e.target.closest('.goal').dataset.id;if(confirm('Delete this goal?')){goals=goals.filter(x=>x.id!==id);saveGoals();render()}};
-$('fBal').onchange=e=>{settings.balance=e.target.value===''?'':Math.round(parseFloat(e.target.value)*100)/100;save();render()};$('fHor').onchange=()=>renderForecast();
+$('fBal').onchange=e=>{settings.balance=e.target.value===''?'':Math.round(parseFloat(e.target.value)*100)/100;save();softRender()};$('fHor').onchange=()=>renderForecast();
+
+// ---- debt payoff
+function debtPlan(list,extra,strat){const base=list.map(d=>({name:d.name,bal:+d.bal,apr:+d.apr,min:+d.min})).filter(d=>d.bal>0);
+ if(!base.length)return{months:[],payoff:null,interest:0,minInterest:0};
+ const sortFn=strat==='avalanche'?(a,b)=>b.apr-a.apr||a.bal-b.bal:(a,b)=>a.bal-b.bal||b.apr-a.apr;
+ const run=(ex)=>{let cur=base.map(d=>({...d})),months=[],interest=0,guard=0,date=todayStr().slice(0,8)+'01';
+  while(cur.some(d=>d.bal>1e-6)&&guard++<600){
+   let monthInt=0;cur.forEach(d=>{const i=d.bal*(d.apr/100)/12;d.bal+=i;monthInt+=i;interest+=i});
+   const ranked=[...cur].filter(d=>d.bal>1e-6).sort(sortFn);const focus=ranked[0];let paid=0;
+   // minimums first
+   cur.forEach(d=>{if(d.bal<=0)return;const p=Math.min(d.bal,d.min);d.bal-=p;paid+=p});
+   // extra rolls down the priority list so leftover is never discarded
+   let pool=ex;for(const d of [...cur].filter(x=>x.bal>1e-6).sort(sortFn)){if(pool<=0)break;const p=Math.min(d.bal,pool);d.bal-=p;paid+=p;pool-=p}
+   const rem=cur.reduce((s,d)=>s+Math.max(0,d.bal),0);
+   months.push({date,focus:focus?focus.name:'',paid,interest:monthInt,remaining:rem});
+   date=addMonths(date,1,1);if(rem<0.01)break}
+  return{months,interest,payoff:months.length?months[months.length-1].date:null}};
+ const plan=run(extra),minOnly=run(0);return{...plan,minInterest:minOnly.interest}}
+function renderDebts(){if(!$('debtList'))return;
+ $('debtList').innerHTML=debts.length?debts.map((d,i)=>`<div class="debt-row" data-i="${i}"><input data-f="name" value="${esc(d.name)}"><input data-f="bal" type="number" step="0.01" value="${d.bal}"><input data-f="apr" type="number" step="0.1" value="${d.apr}"><input data-f="min" type="number" step="0.01" value="${d.min}"><button class="del" type="button" title="Delete">✕</button></div>`).join('')+'<div class="muted hide-m" style="display:grid;grid-template-columns:1.4fr .9fr .7fr .9fr auto;gap:8px;font-size:11px;margin-top:-4px"><span></span><span>Balance £</span><span>APR %</span><span>Min £/mo</span><span></span></div>':'<div class="muted">Add a credit card, loan or overdraft to compare snowball vs avalanche.</div>';
+ $('stratSnow').classList.toggle('on',debtStrat==='snowball');$('stratAva').classList.toggle('on',debtStrat==='avalanche');
+ const extra=parseFloat($('dExtra').value)||0,plan=debtPlan(debts,extra,debtStrat);
+ $('dDate').textContent=plan.payoff?fmtD(plan.payoff)+' '+plan.payoff.slice(0,4):'—';
+ $('dInt').textContent=GBP(plan.interest);$('dSaved').textContent=plan.months.length?GBP(Math.max(0,plan.minInterest-plan.interest)):'—';
+ $('debtPlan').innerHTML=plan.months.slice(0,48).map(m=>`<tr><td>${m.date.slice(0,7)}</td><td>${esc(m.focus)}</td><td class="n">${GBP(m.paid)}</td><td class="n">${GBP(m.interest)}</td><td class="n">${GBP(m.remaining)}</td></tr>`).join('')+(plan.months.length>48?`<tr><td colspan="5" class="muted">… ${plan.months.length} months total</td></tr>`:'');
+ const labels=plan.months.map(m=>m.date.slice(0,7)),rem=plan.months.map(m=>Math.round(m.remaining*100)/100);
+ draw('cDebt','line',labels,[{label:'Remaining',data:rem,borderColor:css('--neg'),backgroundColor:grad('cDebt',css('--neg')),fill:true,tension:.25,pointRadius:0,borderWidth:2}],{plugins:{legend:{display:false}}})}
+
+// ---- UK tax year
+function taxYears(){const t=todayStr(),y=+t.slice(0,4),startMonthDay=t.slice(5)>='04-06'?y:y-1;const years=[];
+ for(let s=startMonthDay;s>=startMonthDay-6;s--)years.push({key:s+''+(s+1).toString().slice(2),start:s+'-04-06',end:(s+1)+'-04-06',label:s+'/'+String(s+1).slice(2)});return years}
+function taxRange(key){return taxYears().find(y=>y.key===key)||taxYears()[0]}
+function inTax(t,y){return t.date>=y.start&&t.date<y.end}
+function renderTax(){if(!$('taxYear'))return;const years=taxYears(),prev=$('taxYear').value;$('taxYear').innerHTML=years.map(y=>`<option value="${y.key}">${y.label}</option>`).join('');
+ if(years.some(y=>y.key===prev))$('taxYear').value=prev;const y=taxRange($('taxYear').value),py=taxYears().find(x=>x.key===(+y.key.slice(0,4)-1)+''+(+y.key.slice(0,4)).toString().slice(2));
+ $('taxLabel').textContent='· '+y.label+' ('+fmtD(y.start)+' – '+fmtD(addDays(y.end,-1))+')';
+ const rows=tx.filter(t=>inTax(t,y)),prows=py?tx.filter(t=>inTax(t,py)):[];
+ const sum=(L,fn)=>L.filter(fn).reduce((s,t)=>s+(fn===isIn?t.amt:-t.amt),0);
+ // fix: 
+ const inn=rows.filter(isIn).reduce((s,t)=>s+t.amt,0),out=-rows.filter(isSpend).reduce((s,t)=>s+t.amt,0);
+ const pinn=prows.filter(isIn).reduce((s,t)=>s+t.amt,0),pout=-prows.filter(isSpend).reduce((s,t)=>s+t.amt,0);
+ $('tyIn').textContent=GBP(inn);$('tyOut').textContent=GBP(out);$('tyNet').textContent=GBP(inn-out);$('tyNet').className=inn-out<0?'neg':'pos';$('tyCnt').textContent=rows.length;
+ const dlt=(n,p)=>!prows.length?'':((n>=p?'▲ ':'▼ ')+GBP(Math.abs(n-p))+' vs '+py.label);
+ $('tyInD').textContent=dlt(inn,pinn);$('tyOutD').textContent=dlt(out,pout);$('tyNetD').textContent=dlt(inn-out,pinn-pout);
+ const cats={};rows.filter(isSpend).forEach(t=>cats[t.cat]=(cats[t.cat]||0)-t.amt);const bc=Object.entries(cats).sort((a,b)=>b[1]-a[1]);
+ draw('cTax','doughnut',bc.map(x=>x[0]),[{data:bc.map(x=>x[1]),backgroundColor:bc.map(x=>catColor(x[0])),borderColor:css('--bg'),borderWidth:3,borderRadius:6}],{cutout:'65%',plugins:{legend:{position:innerWidth<760?'bottom':'right'}}});
+ const mer={};rows.filter(isSpend).forEach(t=>{const k=merch(t.desc);mer[k]=(mer[k]||0)-t.amt});
+ $('taxMer').innerHTML=Object.entries(mer).sort((a,b)=>b[1]-a[1]).slice(0,10).map(([k,v])=>`<tr><td class="nm">${av(k)}<span class="t">${esc(k)}</span></td><td class="n">${GBP(v)}</td></tr>`).join('')||'<tr><td class="muted" colspan="2">No spending in this tax year yet.</td></tr>'}
+
+// ---- smart tips
+function buildTips(){const tips=[],subs=recurring(),cur=currentPeriod()||budgetPeriod(null),prevIdx=cur?PER.findIndex(p=>p.key===cur.key):-1,prev=prevIdx>0?PER[prevIdx-1]:null;
+ const income=tx.filter(t=>isIn(t)&&inP(t,cur)).reduce((s,t)=>s+t.amt,0)||monthlyBasis().income;
+ subs.filter(s=>s.rise).forEach(s=>tips.push({k:'bad',i:'↑',t:`${s.name} went up`,d:`Latest ${GBP(s.latest)} vs usual ${GBP(s.usual)} — about ${GBP(s.latest-s.usual)} more per charge (${GBP(s.annual-s.usual*s.annual/s.latest)}/yr at the new price).`}));
+ const today=todayStr();subs.filter(s=>s.late||diff(s.next,today)>s.days*1.2).forEach(s=>tips.push({k:'warn',i:'💤',t:`${s.name} looks unused`,d:`Expected around ${fmtD(s.next)} (${s.cad}, ${GBP(s.latest)}). If you cancelled it, you can ignore this; otherwise check the merchant.`}));
+ if(prev){const spent=(p)=>{const m={};tx.filter(t=>isSpend(t)&&inP(t,p)).forEach(t=>m[t.cat]=(m[t.cat]||0)-t.amt);return m};const a=spent(cur),b=spent(prev);
+  Object.keys(a).forEach(c=>{if(NOBUDGET.includes(c))return;const up=a[c]-(b[c]||0);if(up>20&&a[c]>(b[c]||0)*1.25)tips.push({k:'warn',i:'📊',t:`${c} up vs last period`,d:`${GBP(a[c])} this period vs ${GBP(b[c]||0)} before (+${GBP(up)}).`})})}
+ tx.filter(t=>isSpend(t)&&t.cat!=='Housing'&&t.date>=addDays(today,-30)&&-t.amt>=settings.large).slice(0,3).forEach(t=>tips.push({k:'warn',i:'⚡',t:`Large payment ${GBP(-t.amt)}`,d:`${t.desc} on ${fmtD(t.date)}.`}));
+ budgetRows(budgetPeriod(cur)).filter(r=>r.b>0&&r.spent>r.b).forEach(r=>tips.push({k:'bad',i:'!',t:`Over budget on ${r.c}`,d:`${GBP(r.spent)} spent against ${GBP(r.b)} (${GBP(r.spent-r.b)} over).`}));
+ if(income>0){const eat=-tx.filter(t=>isSpend(t)&&inP(t,cur)&&t.cat==='Eating out & takeaway').reduce((s,t)=>s+t.amt,0);
+  if(eat/income>0.08)tips.push({k:'warn',i:'🍔',t:'Eating out is a big slice of income',d:`${GBP(eat)} is ${(eat/income*100).toFixed(0)}% of income (${GBP(income)}) this period.`});
+  const subMo=subs.reduce((s,x)=>s+x.monthly,0);if(subMo/income>0.1)tips.push({k:'warn',i:'↻',t:'Subscriptions take over 10% of income',d:`${GBP(subMo)}/mo in recurring bills vs ${GBP(income)} income (${(subMo/income*100).toFixed(0)}%).`})}
+ const S2=typeof safeToSpend==='function'?safeToSpend():null;if(S2&&S2.safe!=null&&S2.safe<0)tips.push({k:'bad',i:'📉',t:'Not enough free cash until payday',d:`Safe to spend is ${GBP(S2.safe)} after bills due (${GBP(S2.due)}) and goal saving (${GBP(S2.goals)}).`});
+ goalStatus().filter(g=>g.st==='risk'||g.st==='overdue').forEach(g=>tips.push({k:'bad',i:'◉',t:`Goal "${g.name}" is ${g.st==='overdue'?'overdue':'at risk'}`,d:`Needs ${GBP(g.req)}/mo to hit ${GBP(g.target)} by ${fmtD(g.deadline)}.`}));
+ return tips}
+function renderTips(){if(!$('tipsList'))return;const tips=buildTips();$('tipCount').textContent=tips.length?`· ${tips.length}`:'';
+ $('tipsList').innerHTML=tips.length?tips.map(t=>`<div class="tip ${t.k}"><div class="ti">${t.i}</div><div><b>${esc(t.t)}</b><div class="td">${esc(t.d)}</div></div></div>`).join(''):'<div class="muted">No tips yet — upload a few months of statements, set budgets or goals, and insights will show up here.</div>'}
+
+// ---- sync / encryption
+function payload(){return{app:'steve-finance',version:3,exported:new Date().toISOString(),tx,rules,budgets,settings:{...settings,lastBackup:todayStr()},goals,debts,debtStrat}}
+async function deriveKey(pass,salt){const enc=new TextEncoder(),base=await crypto.subtle.importKey('raw',enc.encode(pass),'PBKDF2',false,['deriveKey']);
+ return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:250000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+async function encryptBackup(pass){const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),key=await deriveKey(pass,salt);
+ const ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,new TextEncoder().encode(JSON.stringify(payload())));
+ const buf=new Uint8Array(16+12+ct.byteLength);buf.set(salt,0);buf.set(iv,16);buf.set(new Uint8Array(ct),28);
+ let bin='';buf.forEach(b=>bin+=String.fromCharCode(b));return JSON.stringify({app:'steve-finance',version:3,encrypted:true,kdf:'PBKDF2-SHA256-250k',cipher:'AES-GCM',data:btoa(bin)},null,1)}
+async function decryptBackup(obj,pass){if(!obj.encrypted)return obj;if(!pass)throw new Error('This backup is password-protected');
+ const raw=Uint8Array.from(atob(obj.data),c=>c.charCodeAt(0)),salt=raw.slice(0,16),iv=raw.slice(16,28),ct=raw.slice(28),key=await deriveKey(pass,salt);
+ try{const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv},key,ct);return JSON.parse(new TextDecoder().decode(pt))}catch{throw new Error('Wrong password or damaged file')}}
+function mergeBackup(d){const before=tx.length;const have={};tx.forEach(t=>{const k=txKey(t);have[k]=(have[k]||0)+1});
+ const incoming={};(d.tx||[]).forEach(t=>{if(!t||!t.date||typeof t.amt!=='number')return;const k=txKey(t);incoming[k]=(incoming[k]||0)+1;const seen=have[k]||0;if(incoming[k]<=seen)return; // keep genuine same-day duplicates up to backup multiplicity
+  const row={date:t.date,desc:t.desc,amt:t.amt,acct:t.acct||'Account',cat:t.cat||cat(t.desc,t.amt)};tx.push(row);have[k]=(have[k]||0)+1});
+ rules={...rules,...(d.rules||{})};budgets={...budgets,...(d.budgets||{})};settings=Object.assign(settings,d.settings||{});
+ if(Array.isArray(d.goals)){const ids=new Set(goals.map(g=>g.id));d.goals.forEach(g=>{if(g&&g.id&&!ids.has(g.id))goals.push(g)})}
+ if(Array.isArray(d.debts)){const names=new Set(debts.map(x=>x.name));d.debts.forEach(x=>{if(x&&x.name&&!names.has(x.name))debts.push(x)})}
+ if(d.debtStrat)debtStrat=d.debtStrat;saveGoals();saveDebts();save();return tx.length-before}
+function markBackup(){settings.lastBackup=todayStr();save();updateBackupUI()}
+function updateBackupUI(){const lb=settings.lastBackup;$('lastBackup').textContent=lb?`Last backup on this device: ${fmtD(lb)} ${lb.slice(0,4)}`:'No backup recorded on this device yet.';
+ const stale=!lb||diff(lb,todayStr())>=7;$('backupNudge').classList.toggle('show',stale&&tx.length>0)}
+
 // ---- events
 $('tb').onchange=e=>{const k=e.target.dataset.k;if(!k)return;rules[k]=e.target.value;tx.forEach(t=>{if(merch(t.desc)===k)t.cat=e.target.value});save();render()};
-$('budBody').onchange=e=>{const c=e.target.dataset.c;if(!c)return;const v=parseFloat(e.target.value);if(v>0)budgets[c]=Math.round(v*100)/100;else delete budgets[c];save();render()};
+$('budBody').onchange=e=>{const c=e.target.dataset.c;if(!c)return;const v=parseFloat(e.target.value);if(v>0)budgets[c]=Math.round(v*100)/100;else delete budgets[c];save();softRender()};
 $('budSuggest').onclick=()=>{const ps=PER.slice(-4,-1).length?PER.slice(-4,-1):PER;if(!ps.length)return;const tot={};
  ps.forEach(p=>tx.filter(t=>isSpend(t)&&inP(t,p)).forEach(t=>tot[t.cat]=(tot[t.cat]||0)-t.amt));
  Object.entries(tot).forEach(([c,v])=>{if(!NOBUDGET.includes(c)&&!budgets[c])budgets[c]=Math.ceil(v/ps.length/5)*5});save();render()};
 $('file').onchange=e=>{handle(e.target.files);e.target.value=''};$('period').onchange=render;$('q').oninput=()=>renderTx();
 $('pmode').onchange=e=>{settings.mode=e.target.value;$('period').value='';save();render()};$('payday').onchange=e=>{settings.payday=e.target.value;save();render()};
 $('drop').ondragover=e=>e.preventDefault();$('drop').ondrop=e=>{e.preventDefault();handle(e.dataTransfer.files)};
-$('clear').onclick=()=>{if(confirm('Delete all saved transactions, category fixes and budgets? (Make a backup first if unsure.)')){tx=[];rules={};budgets={};goals=[];saveGoals();save();render()}};
+$('clear').onclick=()=>{if(confirm('Delete all saved transactions, category fixes, budgets, goals and debts? (Make a backup first if unsure.)')){tx=[];rules={};budgets={};goals=[];debts=[];saveGoals();saveDebts();save();render()}};
 function download(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
 $('expCsv').onclick=()=>{const cur=currentPeriod(),rows=tx.filter(t=>inP(t,cur)).sort((a,b)=>a.date.localeCompare(b.date));
  download(`steve-transactions-${cur?cur.key:'all'}.csv`,Papa.unparse({fields:['Date','Account','Description','Category','Amount'],data:rows.map(t=>[t.date,t.acct,t.desc,t.cat,t.amt.toFixed(2)])}),'text/csv')};
-$('backup').onclick=()=>download(`steve-backup-${todayStr()}.json`,JSON.stringify({app:'steve-finance',version:2,exported:new Date().toISOString(),tx,rules,budgets,settings,goals},null,1),'application/json');
-$('restore').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d.tx))throw new Error('not a Steve backup');
- if(tx.length&&!confirm(`Replace your current ${tx.length} transactions with the ${d.tx.length} in this backup?`))return;
- tx=d.tx.filter(t=>t&&t.date&&typeof t.amt==='number');rules=d.rules||{};budgets=d.budgets||{};settings=Object.assign(settings,d.settings||{});goals=Array.isArray(d.goals)?d.goals:[];saveGoals();save();$('msg').textContent=`Restored ${tx.length} transactions from backup.`;render()}catch(err){$('msg').textContent='Restore failed: '+err.message}};
+$('syncExport').onclick=$('nudgeBackup').onclick=async()=>{try{const pass=$('syncPass').value;const text=pass?await encryptBackup(pass):JSON.stringify(payload(),null,1);
+ download(`steve-backup-${todayStr()}${pass?'.stevebackup':'.json'}`,text,'application/json');markBackup();$('syncInfo').textContent=pass?'Encrypted backup downloaded. Keep the password — it cannot be recovered.':'Backup downloaded (unencrypted JSON).'}catch(err){$('syncInfo').textContent='Export failed: '+err.message}};
+$('restore').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;try{let d=JSON.parse(await f.text());d=await decryptBackup(d,$('syncPass').value);if(!Array.isArray(d.tx))throw new Error('not a Steve backup');
+ const replace=document.querySelector('input[name=merge][value=replace]').checked;
+ if(replace){if(tx.length&&!confirm(`Replace your current ${tx.length} transactions with the ${d.tx.length} in this backup?`))return;
+  tx=d.tx.filter(t=>t&&t.date&&typeof t.amt==='number');rules=d.rules||{};budgets=d.budgets||{};settings=Object.assign(settings,d.settings||{});goals=Array.isArray(d.goals)?d.goals:[];debts=Array.isArray(d.debts)?d.debts:[];debtStrat=d.debtStrat||debtStrat;saveGoals();saveDebts();save();$('msg').textContent=`Replaced with ${tx.length} transactions from backup.`;}
+ else{const n=mergeBackup(d);$('msg').textContent=`Merged backup: ${n} new transactions added (duplicates skipped). Goals/debts/budgets combined.`;}
+ markBackup();render()}catch(err){$('msg').textContent='Restore failed: '+err.message}};
+
+$('debtForm').onsubmit=e=>{e.preventDefault();debts.push({name:$('dName').value.trim(),bal:+$('dBal').value,apr:+$('dApr').value,min:+$('dMin').value});saveDebts();e.target.reset();render()};
+$('debtList').onchange=e=>{const row=e.target.closest('.debt-row');if(!row)return;const i=+row.dataset.i,f=e.target.dataset.f;if(f==='name')debts[i].name=e.target.value;else debts[i][f]=parseFloat(e.target.value)||0;saveDebts();softRender()};
+$('debtList').onclick=e=>{if(!e.target.classList.contains('del'))return;debts.splice(+e.target.closest('.debt-row').dataset.i,1);saveDebts();render()};
+$('dExtra').onchange=()=>renderDebts();$('stratSnow').onclick=()=>{debtStrat='snowball';saveDebts();renderDebts()};$('stratAva').onclick=()=>{debtStrat='avalanche';saveDebts();renderDebts()};
+$('taxYear').onchange=()=>renderTax();
+$('taxCsv').onclick=()=>{const y=taxRange($('taxYear').value),rows=tx.filter(t=>inTax(t,y)).sort((a,b)=>a.date.localeCompare(b.date));
+ download(`steve-tax-${y.key}.csv`,Papa.unparse({fields:['Date','Account','Description','Category','Amount'],data:rows.map(t=>[t.date,t.acct,t.desc,t.cat,t.amt.toFixed(2)])}),'text/csv')};
+$('taxPrint').onclick=()=>{const y=taxRange($('taxYear').value),rows=tx.filter(t=>inTax(t,y)).sort((a,b)=>a.date.localeCompare(b.date));
+ const w=window.open('','_blank');if(!w){$('msg').textContent='Pop-up blocked — allow pop-ups to print.';return}
+ w.document.write('<html><head><title>Steve tax year '+y.label+'</title><style>body{font-family:system-ui;padding:24px;color:#111}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:6px;text-align:left}.n{text-align:right}@media print{button{display:none}}</style></head><body>');
+ w.document.write('<h1>Steve · UK tax year '+y.label+'</h1><p>'+fmtD(y.start)+' – '+fmtD(addDays(y.end,-1))+'</p>');
+ w.document.write('<p>Income '+$('tyIn').textContent+' · Spending '+$('tyOut').textContent+' · Net '+$('tyNet').textContent+'</p>');
+ w.document.write('<h3>Transactions</h3><table><tr><th>Date</th><th>Description</th><th>Category</th><th class="n">Amount</th></tr>'+rows.map(t=>'<tr><td>'+t.date+'</td><td>'+esc(t.desc)+'</td><td>'+esc(t.cat)+'</td><td class="n">'+GBP(t.amt)+'</td></tr>').join('')+'</table>');
+ w.document.write('</body></html>');w.document.close();w.focus();setTimeout(()=>w.print(),300)};
 // ---- notifications (local only; fired when the page is open)
 function maybeNotify(force){if(!('Notification'in window)||Notification.permission!=='granted')return;const day=todayStr();if(!force&&localStorage.getItem('steve_notified')===day)return;
  const A=(window._alerts||[]).filter(a=>a.t==='bill'||a.t==='up');if(!A.length)return;localStorage.setItem('steve_notified',day);
@@ -393,5 +624,6 @@ $('notify').onclick=async()=>{if(!('Notification'in window)){$('msg').textConten
  let ev;addEventListener('beforeinstallprompt',e=>{e.preventDefault();ev=e;$('install').hidden=false});$('install').onclick=()=>{ev&&ev.prompt();$('install').hidden=true}})();
 if(window.STEVE_PWA&&'serviceWorker'in navigator&&/^https?:/.test(location.protocol))navigator.serviceWorker.register('sw.js').then(r=>{window.SW_OK=true}).catch(e=>console.warn('SW',e));
 let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(render,250)});
+window.steve={debtPlan,encryptBackup,decryptBackup,mergeBackup,payload,parsePdfLines,fromOFX,fromQIF,buildTips,taxYears,taxRange,inTax,recurring,monthlyBasis,goalStatus,safeToSpend,forecast};
 setTheme(document.documentElement.dataset.theme||'dark');setTimeout(maybeNotify,500);
 </script></body></html>
