@@ -1,5 +1,5 @@
 // Steve service worker – offline cache. Data never goes through here: it lives in localStorage on the device.
-const CACHE='steve-f29e30cbf6',ASSETS=["./", "index.html", "manifest.webmanifest", "icons/apple-touch-icon.png", "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png", "lib/chart.umd.min.js", "lib/papaparse.min.js", "lib/pdf.min.js", "lib/pdf.worker.min.js"];
+const CACHE='steve-e88bf4d302',ASSETS=["./", "index.html", "manifest.webmanifest", "icons/apple-touch-icon.png", "icons/icon-192.png", "icons/icon-512.png", "icons/maskable-512.png", "lib/chart.umd.min.js", "lib/papaparse.min.js", "lib/pdf.min.js", "lib/pdf.worker.min.js"];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET')return;const u=new URL(r.url);
@@ -8,3 +8,5 @@ self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET')return;c
  if(/fonts\.(googleapis|gstatic)\.com$/.test(u.hostname)){ // optional web font: stale-while-revalidate
   e.respondWith(caches.open(CACHE).then(c=>c.match(r).then(m=>{const f=fetch(r).then(res=>{c.put(r,res.clone());return res}).catch(()=>m);return m||f})))}
 });
+// reminder notifications are created on the device by the page; tapping one opens (or focuses) Steve
+self.addEventListener('notificationclick',e=>{e.notification.close();e.waitUntil(self.clients.matchAll({type:'window',includeUncontrolled:true}).then(cs=>{const c=cs.find(x=>'focus'in x);return c?c.focus():self.clients.openWindow('./')}))});

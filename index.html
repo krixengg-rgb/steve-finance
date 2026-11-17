@@ -197,6 +197,61 @@ body.reporting{overflow:hidden}
 }
 @media(prefers-reduced-motion:reduce){table.tx tr{transition:none}}
  @media(max-width:760px){.vlist{overflow-x:hidden}}
+/* ---- round 7 */
+.av.av-i{font-size:17px;line-height:1;background:var(--card2)!important;border:1px solid var(--bd)}
+td.d .mi{display:inline-block;width:22px;text-align:center;margin-right:6px;font-size:15px;vertical-align:-1px}
+.chip.xf{color:var(--a2);border-color:color-mix(in srgb,var(--a2) 40%,transparent)}
+#newsBtn{position:relative}#newsDot{position:absolute;top:6px;right:6px;width:9px;height:9px;border-radius:50%;background:var(--neg);box-shadow:0 0 0 2px var(--bg)}
+.card h4{margin:16px 0 8px;font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.wi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.wi-grid label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--mut)}.wi-grid input,.wi-grid select{width:100%}
+.wi-grid input[type=range]{accent-color:var(--a1);padding:0;height:34px}
+.wi-k{margin-bottom:12px}.wi-k b{font-size:18px}
+.wig{width:100%;margin-top:10px}.wig td,.wig th{padding:7px 6px}.shift{font-size:11px;font-weight:600;margin-left:6px}.shift.pos{color:var(--pos)}.shift.neg{color:var(--neg)}
+.acct,.rn{display:grid;grid-template-columns:36px 1fr 120px auto auto;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.acct:last-child,.rn:last-child{border-bottom:0}.acct .ri,.rn .ri{min-width:0}.acct .ri b,.rn .ri b{font-weight:600}
+.acct input,.rn input{width:100%}
+.xf-row{display:grid;grid-template-columns:auto 1fr auto auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--bd);font-size:13px}.xf-row:last-child{border-bottom:0}
+.dates{list-style:none;margin:0;padding:0}.dates li{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}.dates li:last-child{border-bottom:0}
+.dates .dd{font-weight:700;font-variant-numeric:tabular-nums}
+.isa-meter{margin:6px 0 14px}.isa-meter .bar{height:14px}.isa-meter .bar i{background:var(--grad,linear-gradient(90deg,var(--a1),var(--a2)))}
+.isa-meter .bar i.warn{background:var(--warn)}.isa-meter .bar i.over{background:var(--neg)}
+.hbar{height:6px;border-radius:9px;background:var(--card2);margin-top:5px;overflow:hidden}.hbar i{display:block;height:100%;background:linear-gradient(90deg,var(--a1),var(--a2));border-radius:9px}
+.hb-tot{display:flex;gap:18px;flex-wrap:wrap;margin:4px 0 10px}.hb-tot b{font-size:22px;display:block}
+#rnSuggest{margin:10px 0;display:flex;flex-wrap:wrap;gap:6px}#rnSuggest .chip{cursor:pointer;padding:6px 10px;font-size:12px;color:var(--tx)}
+.pat-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px}
+.hm{display:grid;gap:4px;align-items:center}.hm .hl,.hm .hw{font-size:10px;color:var(--mut)}.hm .hw{white-space:nowrap;overflow:visible}
+.hc{aspect-ratio:1;border-radius:5px;min-width:0;background:color-mix(in srgb,var(--a1) calc(var(--k)*100%),var(--card2));border:1px solid var(--bd)}.hc.na{background:transparent;border-style:dashed;opacity:.4}
+.dow{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;align-items:end;height:92px;margin:14px 0 6px}
+.dow div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:10px;color:var(--mut);gap:3px}
+.dow i{display:block;width:100%;max-width:30px;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--a1),var(--a2));min-height:2px}
+.dow div.top i{background:linear-gradient(180deg,var(--warn),var(--neg))}
+#flow svg{width:100%;height:auto;display:block}#flow text{fill:var(--tx);font-size:12px;paint-order:stroke;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}#flow text.sm{fill:var(--mut);font-size:11px}
+#flow .band{transition:opacity .2s}#flow .band:hover{opacity:.9!important}
+.wn{list-style:none;margin:12px 0;padding:0;display:grid;gap:10px}.wn li{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:start;padding:10px;border:1px solid var(--bd);border-radius:14px;background:var(--card)}
+.wn .wi{font-size:20px;line-height:1.2;text-align:center}.wn b{display:block}.wn .muted{font-size:12.5px}
+#tour{position:fixed;inset:0;z-index:80;pointer-events:none}#tour[hidden]{display:none!important}
+#tourHL{position:fixed;border-radius:18px;box-shadow:0 0 0 9999px rgba(3,6,15,.62);outline:2px solid var(--a1);transition:all .25s;pointer-events:none}
+#tourPop{position:fixed;pointer-events:auto;background:var(--bg2);border:1px solid var(--bd);border-radius:18px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.4);max-width:calc(100vw - 24px)}
+#tourPop h3{margin:2px 0 6px}#tourPop p{margin:0 0 12px;line-height:1.5}
+@media(prefers-reduced-motion:reduce){#tourHL{transition:none}}
+@media(max-width:760px){
+ .pat-grid{grid-template-columns:1fr}
+ .acct,.rn{grid-template-columns:32px 1fr 96px auto;gap:8px}.acct .ause{grid-column:2/-1;justify-self:start}
+ .rn .rnok{grid-column:2/4;justify-self:start}
+ .dates li{grid-template-columns:78px 1fr}
+ .wi-grid{grid-template-columns:1fr 1fr}
+ .wn li{grid-template-columns:30px 1fr}.wn li button{grid-column:2}
+ .xf-row{grid-template-columns:1fr auto}.xf-row .xd{grid-column:1/-1}
+}
+@media print{#tour,#newsBtn{display:none!important}}
+#tourSkip,.sarx{background:none!important;border:0!important;box-shadow:none!important;color:var(--mut)!important;padding:6px 4px!important;text-decoration:underline;font-weight:500}
+.sarx{text-decoration:none;padding:0 0 0 4px!important;font-size:11px}
+button.isadel,button.rndel,button.isano{background:var(--card2);color:var(--mut);border:1px solid var(--bd);box-shadow:none;padding:6px 10px;font-size:12px;white-space:nowrap}
+#isaBody td{white-space:nowrap}#isaBody td.t{white-space:normal}
+.wi-k b{white-space:nowrap}
+.wn li button{padding:6px 12px;font-size:12px;justify-self:start}
+.scroll{position:relative}.sr{margin:-1px;padding:0;border:0;clip-path:inset(50%)}th{position:relative}
 </style></head><body><svg width="0" height="0" style="position:absolute"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14e0c4"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs></svg>
 <a class="skip" href="#overview">Skip to dashboard</a>
 <div id="lockScreen" hidden role="dialog" aria-modal="true" aria-labelledby="lockTitle"><form class="lockbox" id="lockForm" autocomplete="off"><div class="logo">£</div>
@@ -204,12 +259,12 @@ body.reporting{overflow:hidden}
 <label class="sr" for="lockIn">Passphrase</label><input id="lockIn" type="password" autocomplete="current-password" placeholder="Passphrase" required>
 <button type="submit" id="lockGo">Unlock</button><div id="lockErr" role="alert"></div>
 <button type="button" class="linkish" id="lockReset">Forgot it? Erase and start again</button></form></div>
-<header><div class="logo">£</div><div><h1>Steve <span>Finance</span></h1><small>Private by design · your data never leaves this browser</small></div><span class="hsp"></span><button class="icon-btn" type="button" data-qa title="Quick add (N)" aria-label="Quick add a transaction">＋</button><button class="icon-btn" type="button" id="lockNow" hidden title="Lock now (L)" aria-label="Lock Steve now">🔒</button><button class="icon-btn" id="theme" title="Toggle light/dark" aria-label="Toggle light or dark theme">☾</button></header>
+<header><div class="logo">£</div><div><h1>Steve <span>Finance</span></h1><small>Private by design · your data never leaves this browser</small></div><span class="hsp"></span><button class="icon-btn" type="button" data-qa title="Quick add (N)" aria-label="Quick add a transaction">＋</button><button class="icon-btn" type="button" id="lockNow" hidden title="Lock now (L)" aria-label="Lock Steve now">🔒</button><button class="icon-btn" type="button" id="newsBtn" title="What's new" aria-label="What's new in Steve">✨<span id="newsDot" hidden></span></button><button class="icon-btn" id="theme" title="Toggle light/dark" aria-label="Toggle light or dark theme">☾</button></header>
 <main>
 <div class="card" id="welcome"><h3>Welcome to Steve</h3>
 <p>Your statements stay in this browser. Nothing is uploaded anywhere — not even when you later install the app on your phone.</p>
 <div class="row"><button type="button" id="loadSample">Try with sample data</button>
-<button class="alt" type="button" id="skipWelcome">I'll upload my own statements</button></div>
+<button class="alt" type="button" id="skipWelcome">I'll upload my own statements</button><button class="alt" type="button" id="tourBtn1">Take the 1-minute tour</button></div>
 <p class="muted" style="margin-top:8px">Sample is a made-up Huntingdon current account and credit card (Apr–Oct 2026). You can clear it any time.</p></div>
 <div class="card" id="alerts"><b>Alerts</b> <span class="muted" id="alertsSub"></span><ul id="alertList"></ul></div>
 <div class="card"><div class="drop" id="drop"><strong>Drop your statements here</strong>Bank or credit card · CSV or PDF<br><input type="file" id="file" aria-label="Choose statement files" multiple accept=".csv,.pdf,.ofx,.qif,.qfx,text/csv,application/pdf"></div>
@@ -298,6 +353,29 @@ body.reporting{overflow:hidden}
 </div>
 
 <div class="grid">
+<div class="card" id="whatIfCard"><h3>What if… <span class="muted">scenario planner</span></h3>
+<p class="muted" style="margin-top:-8px">Try a change and see what it does to the next 12 months and your goals. Your real data isn't touched.</p>
+<div class="wi-grid">
+<label>Cut spending on<select id="wiCat"></select></label>
+<label><span>Cut by <b id="wiPctOut">0%</b></span><input id="wiPct" type="range" min="0" max="100" step="5" value="0" aria-label="Cut by percent"></label>
+<label>New take-home pay £/mo<input id="wiPay" type="number" min="0" step="10" inputmode="decimal"></label>
+<label>New rent or mortgage £/mo<input id="wiHouse" type="number" min="0" step="10" inputmode="decimal"></label>
+<label>One-off cost £<input id="wiOne" type="number" min="0" step="10" inputmode="decimal" placeholder="e.g. 900"></label>
+<label>One-off date<input id="wiOneDate" type="date"></label></div>
+<div class="ty-grid wi-k"><div><span class="muted">Left each month</span><b id="wiSur">—</b><span class="muted" id="wiSurD"></span></div>
+<div><span class="muted">Balance in 12 months</span><b id="wiEnd">—</b><span class="muted" id="wiEndD"></span></div>
+<div><span class="muted">Lowest point</span><b id="wiLow">—</b><span class="muted" id="wiLowD"></span></div>
+<div><span class="muted">Difference per year</span><b id="wiYr">—</b></div></div>
+<canvas id="cWhat"></canvas><div id="wiGoals"></div>
+<div class="row" style="margin-top:10px"><button type="button" class="alt" id="wiReset">Clear scenario</button><span class="muted" id="wiNote" role="status" aria-live="polite" style="flex:1;min-width:200px"></span></div></div>
+<div class="card" id="acctCard"><h3>Accounts &amp; transfers <span class="muted" id="acctTotal"></span></h3>
+<p class="muted" style="margin-top:-8px">Money moved between your own accounts is paired up automatically and never counts as spending or income. Type a balance to track each account.</p>
+<div id="acctList"></div>
+<h4>Regular income <span class="muted" id="incSum"></span></h4><div id="incList"></div>
+<h4>Matched transfers <span class="muted" id="xferSum"></span></h4><div id="xferList"></div>
+<label class="muted" style="display:block;margin-top:10px"><input type="checkbox" id="autoXfer" checked> Pair up transfers between my accounts automatically</label></div>
+</div>
+<div class="grid">
 <div class="card" id="debtsCard"><h3>Debt payoff planner</h3>
 <div id="debtList"></div>
 <form id="debtForm" class="debt-row" style="border:0;margin-top:8px" autocomplete="off">
@@ -324,9 +402,48 @@ body.reporting{overflow:hidden}
 <div class="scroll"><table><thead><tr><th>Merchant</th><th class="n">Spent</th></tr></thead><tbody id="taxMer"></tbody></table></div>
 </div>
 </div>
+<div class="grid">
+<div class="card" id="saCard"><h3>Self Assessment helper <span class="muted" id="saLabel"></span></h3>
+<p class="muted" style="margin-top:-8px">For freelance, side-hustle or rental income. Tag money in and allowable costs, then see totals per tax year and the dates that matter. A helper, not tax advice: check gov.uk.</p>
+<div class="row" style="margin-bottom:10px"><label>Tax year <select id="saYear"></select></label><button class="alt" type="button" id="saCsv">Export SA CSV</button><button class="alt" type="button" id="saPot">Create tax pot</button></div>
+<div class="ty-grid"><div><span class="muted">Income</span><b id="saInc" class="pos">£0</b></div><div><span class="muted">Allowable costs</span><b id="saExp">£0</b></div>
+<div><span class="muted">Profit</span><b id="saProfit">£0</b></div><div><span class="muted">Put aside (<span id="saPctL">25</span>%)</span><b id="saAside">£0</b></div></div>
+<div class="muted" id="saTA" style="margin-top:6px"></div><div class="muted" id="saMtdHint"></div>
+<div class="row" style="margin-top:10px"><span class="muted">Tag the <b id="saShown">0</b> transactions in the list below as</span><button class="alt" type="button" id="saTagInc">SA income</button><button class="alt" type="button" id="saTagExp">SA cost</button><button class="alt" type="button" id="saTagClr">Clear</button></div>
+<form id="saRuleForm" class="row" style="margin-top:8px" autocomplete="off"><input id="saRuleVal" placeholder="Always tag descriptions containing… e.g. ETSY" aria-label="Description contains" style="flex:1;min-width:160px"><select id="saRuleTag" aria-label="Tag as"><option value="sa-income">as SA income</option><option value="sa-expense">as SA cost</option></select><button type="submit" class="alt">Add rule</button></form>
+<div id="saRules" class="muted" style="margin-top:6px"></div>
+<div class="row" style="margin-top:10px"><label>Last year's SA bill £ <input id="saLast" type="number" min="0" step="1" inputmode="decimal" style="width:110px" placeholder="optional"></label>
+<label>Put aside % <input id="saPct" type="number" min="0" max="60" step="1" style="width:70px"></label><label><input type="checkbox" id="saMtd"> I use Making Tax Digital</label></div>
+<h4>Coming up</h4><ul id="saDates" class="dates"></ul></div>
+<div class="card" id="isaCard"><h3>ISA allowance <span class="muted" id="isaLabel"></span></h3>
+<div class="row" style="margin-bottom:6px"><label>Tax year <select id="isaYear"></select></label></div>
+<div class="isa-meter"><div class="bar" id="isaMeter" role="progressbar" aria-label="ISA allowance used" aria-valuemin="0" aria-valuemax="20000" aria-valuenow="0"><i id="isaBar"></i></div></div>
+<div class="ty-grid"><div><span class="muted">Paid in</span><b id="isaUsed">£0</b></div><div><span class="muted">Left to use</span><b id="isaLeft" class="pos">£20,000.00</b></div>
+<div><span class="muted">Days left</span><b id="isaDays">—</b><span class="muted" id="isaBy"></span></div><div><span class="muted">Lifetime ISA</span><b id="isaLisa">£0</b><span class="muted">of £4,000</span></div></div>
+<div id="isaMsg" class="muted" style="margin:8px 0"></div>
+<div class="scroll" style="max-height:220px"><table><thead><tr><th>Date</th><th>Where</th><th>Type</th><th class="n">Amount</th><th><span class="sr">Actions</span></th></tr></thead><tbody id="isaBody"></tbody></table></div>
+<form id="isaForm" class="row" style="margin-top:10px" autocomplete="off"><input id="isaDate" type="date" aria-label="Date paid in" required><input id="isaAmt" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Amount £" aria-label="Amount £" required style="width:110px">
+<select id="isaType" aria-label="ISA type"><option value="cash">Cash ISA</option><option value="ss">Stocks &amp; shares ISA</option><option value="lisa">Lifetime ISA</option><option value="ifisa">Innovative finance ISA</option></select>
+<input id="isaProv" placeholder="Provider (optional)" aria-label="Provider" style="flex:1;min-width:110px"><button type="submit">Add</button></form>
+<p class="muted" style="margin-bottom:0">£20,000 a year across all your ISAs, up to £4,000 of it in a Lifetime ISA. Moving an existing ISA to a new provider doesn't use allowance. The £12,000 cash ISA limit planned for April 2027 was scrapped in October 2026.</p></div>
+</div>
 <div class="card" id="tipsCard"><h3>Smart tips <span class="muted" id="tipCount"></span></h3>
 <div class="tips" id="tipsList"></div></div>
 
+<div class="grid">
+<div class="card" id="billsCard"><h3>Household bills <span class="muted" id="hbTotal"></span></h3>
+<p class="muted" style="margin-top:-8px">What running the home really costs, from your last 12 months of payments and the bills Steve sees repeating.</p>
+<div class="hb-tot"><div><span class="muted">Per year</span><b id="hbYear">£0</b></div><div><span class="muted">Per month</span><b id="hbMonth">£0</b></div><div><span class="muted">Per week</span><b id="hbWeek">£0</b></div></div>
+<div class="scroll"><table><thead><tr><th>Bill</th><th class="n">Per month</th><th class="n">Per year</th><th class="hide-m">Based on</th></tr></thead><tbody id="hbBody"></tbody></table></div></div>
+<div class="card" id="renewCard"><h3>Renewals &amp; reminders <span class="muted" id="rnTotal"></span></h3>
+<div id="rnList"></div><div id="rnSuggest"></div>
+<form id="rnForm" class="row" style="margin-top:10px" autocomplete="off"><select id="rnKind" aria-label="What renews"></select><input id="rnName" placeholder="Name, e.g. Admiral car insurance" aria-label="Name" style="flex:1;min-width:150px">
+<input id="rnDue" type="date" aria-label="Renewal or end date" required><input id="rnCost" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Cost £" aria-label="Cost £" style="width:100px">
+<select id="rnEvery" aria-label="Repeats"><option value="12">yearly</option><option value="24">every 2 years</option><option value="1">monthly</option><option value="0">one-off</option></select>
+<select id="rnRemind" aria-label="Remind me"><option value="7">remind 7 days before</option><option value="14">remind 14 days before</option><option value="21" selected>remind 21 days before</option><option value="30">remind 30 days before</option></select><button type="submit">Add</button></form>
+<div class="row" style="margin-top:10px"><button type="button" class="alt" id="rnNotify" aria-pressed="false">🔔 Turn on reminders</button><button type="button" class="alt" id="rnIcs">Add to my calendar (.ics)</button></div>
+<div class="muted" id="rnMsg" role="status" aria-live="polite" style="margin-top:8px"></div></div>
+</div>
 <div class="grid">
 <div class="card" id="worthCard"><h3>Net worth <span class="muted" id="nwTotal"></span></h3>
 <p class="muted" style="margin-top:-8px">Manual assets (ISAs, pensions, property) plus debts you have already added. Values stay on this device.</p>
@@ -370,6 +487,9 @@ body.reporting{overflow:hidden}
 <div class="card"><h3 id="monTitle">Monthly in vs out</h3><canvas id="cMon"></canvas></div>
 <div class="card"><h3>Top merchants</h3><canvas id="cMer"></canvas></div>
 <div class="card"><h3>Daily spending</h3><canvas id="cDay"></canvas></div></div>
+<div class="card" id="patternsCard"><h3>Spending patterns</h3>
+<div class="pat-grid"><section aria-labelledby="h-heat"><h4 id="h-heat">When you spend · last 12 weeks</h4><div id="heat" role="img"></div><div id="dowBars"></div><div class="muted" id="heatNote"></div></section>
+<section aria-labelledby="h-flow"><h4 id="h-flow">Where the money went <span class="muted" id="flowLabel"></span></h4><div id="flow"></div></section></div></div>
 <div class="card" id="txCard"><h3>Transactions <span class="muted" id="txFilterInfo"></span></h3>
 <div class="filters">
 <input id="q" placeholder="Search description, notes, tags…  (/ to focus)" aria-label="Search transactions" type="search">
@@ -394,7 +514,7 @@ body.reporting{overflow:hidden}
 <p><span class="kbd">/</span> Search &nbsp; <span class="kbd">Ctrl</span>+<span class="kbd">Z</span> Undo &nbsp; <span class="kbd">Ctrl</span>+<span class="kbd">Shift</span>+<span class="kbd">Z</span> Redo<br>
 <span class="kbd">?</span> This help &nbsp; <span class="kbd">Esc</span> Close<br><span class="kbd">N</span> Quick add &nbsp; <span class="kbd">R</span> Monthly report &nbsp; <span class="kbd">L</span> Lock now (when the lock is on)<br>On a phone: swipe a transaction left for Edit / Delete.</p>
 <p class="muted">Shortcuts are ignored while you are typing in a field.</p>
-<button class="alt" type="button" id="helpClose">Close</button></div></div>
+<button class="alt" type="button" id="tourBtn2">Take the tour</button> <button class="alt" type="button" id="helpClose">Close</button></div></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <div id="impModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="impTitle" aria-hidden="true"><div class="box wide">
 <h3 id="impTitle">Check before importing</h3><div class="muted" id="impSub"></div>
@@ -411,7 +531,11 @@ body.reporting{overflow:hidden}
 <label class="span2">What for<input id="qaDesc" placeholder="e.g. Window cleaner"></label><label>Category<select id="qaCat"></select></label><label>Date<input id="qaDate" type="date"></label>
 <label class="span2">Account<input id="qaAcct" list="qaAccts"></label><datalist id="qaAccts"></datalist></div><div class="neg" id="qaErr" role="alert" style="min-height:16px;margin-top:6px;font-size:12px"></div>
 <div class="row" style="margin-top:8px"><span style="flex:1"></span><button class="alt" type="button" id="qaCancel">Cancel</button><button type="submit" id="qaSave">Add</button></div></form></div>
+<div id="wnModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="wnTitle" aria-hidden="true"><div class="box"><h3 id="wnTitle">What's new in Steve</h3><div class="muted">November 2026 · everything still stays on this device</div>
+<ul class="wn" id="wnList"></ul><div class="row"><span style="flex:1"></span><button class="alt" type="button" id="wnTour">Take the tour</button><button type="button" id="wnClose">Got it</button></div></div></div>
 </main>
+<div id="tour" hidden><div id="tourHL"></div><div id="tourPop" role="dialog" aria-modal="true" aria-labelledby="tourT" aria-describedby="tourD"><div class="muted" id="tourN"></div><h3 id="tourT"></h3><p id="tourD"></p>
+<div class="row"><button type="button" class="linkish" id="tourSkip">Skip tour</button><span style="flex:1"></span><button type="button" class="alt" id="tourBack">Back</button><button type="button" id="tourNext">Next</button></div></div></div>
 <div id="report" hidden role="dialog" aria-modal="true" aria-label="Monthly report"><div class="rbar"><button type="button" id="reportPrint">Print / save as PDF</button><button type="button" class="alt" id="reportClose">Close</button></div><div id="reportBody"></div></div>
 <nav class="tabbar" aria-label="Sections"><a href="#overview"><i aria-hidden="true">◎</i>Home</a><a href="#insightsCard"><i aria-hidden="true">✦</i>Insights</a><button type="button" class="qa" data-qa aria-label="Quick add a transaction">＋</button><a href="#goalsCard"><i aria-hidden="true">◉</i>Goals</a><a href="#txCard"><i aria-hidden="true">≡</i>Activity</a></nav>
 <script type="text/plain" id="steve-main">
@@ -587,8 +711,20 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)');
 const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const PAL=['#14e0c4','#8b5cf6','#3b82f6','#f472b6','#ffb547','#22d3ee','#a3e635','#fb7185','#c084fc','#2dd4bf','#f59e0b','#60a5fa','#94a3b8'];
 const catColor=c=>{const i=allCats().indexOf(c);return PAL[Math.max(0,i)%PAL.length]};
+// ---- merchant & bill icons: local emoji only, nothing is fetched (round 7)
+const MICON=[[/\b(netflix|disney|prime video|now tv|odeon|cineworld|vue cinema)/i,'🎬'],[/\b(spotify|apple music|audible|deezer)/i,'🎵'],[/\b(deliveroo|just ?eat|uber ?eats)/i,'🛵'],[/\b(uber|bolt|taxi|addison lee)\b/i,'🚕'],
+ [/\b(trainline|lner|gwr|avanti|tfl|rail|stagecoach|bus)\b/i,'🚆'],[/\b(costa|starbucks|pret|caffe nero|coffee)/i,'☕'],[/\b(mcdonald|burger|kfc|nando|greggs|domino|pizza)/i,'🍔'],[/\b(pub|brewdog|wetherspoon)\b/i,'🍺'],
+ [/\bshell energy\b/i,'⚡'],[/\b(shell|bp|esso|texaco|jet|gulf|petrol|fuel)\b/i,'⛽'],[/\b(octopus|british gas|edf|e\.?on|ovo|scottish power|so energy|outfox)\b/i,'⚡'],[/\bwater\b/i,'💧'],[/\bcouncil tax\b/i,'🏛️'],[/\bhmrc\b/i,'🧾'],
+ [/\b(tv licen[cs]e)/i,'📺'],[/\b(gym|puregym|fitness|david lloyd)/i,'🏋️'],[/\b(vodafone|o2|ee|three|giffgaff|bt|sky|virgin|broadband|talktalk|plusnet|hyperoptic)\b/i,'📶'],
+ [/\b(insurance|aviva|admiral|direct line|hastings|axa|churchill|esure)\b/i,'🛡️'],[/\b(dvla|mot|kwik fit|halfords)\b/i,'🚗'],[/\b(salary|wages|payroll)\b/i,'💷'],[/\b(rent|mortgage|letting|lettings)\b/i,'🏠'],
+ [/\b(atm|cash)\b/i,'💵'],[/\b(pharmacy|boots|superdrug)\b/i,'💊'],[/\b(dentist|doctor|nhs)\b/i,'🩺'],[/\b(l?isa|savings|vanguard|trading ?212|nutmeg|moneybox|premium bonds|ns&i)\b/i,'🐷'],
+ [/\b(transfer|credit card payment|payment received)\b/i,'⇄'],[/\b(ikea|b&q|wickes|screwfix|homebase)\b/i,'🔨'],[/\b(tesco|sainsbury'?s?|asda|morrisons?|aldi|lidl|waitrose|co-?op|iceland|ocado|m&s)\b/i,'🛒'],
+ [/\b(amazon|amzn|ebay|argos|currys)\b/i,'📦'],[/\b(apple\.com|google|youtube|xbox|playstation|steam)\b/i,'🎮'],[/\b(restaurant|cafe)\b/i,'🍽️']];
+const CICON={Groceries:'🛒','Eating out & takeaway':'🍽️',Fuel:'⛽',Subscriptions:'🔁',Transport:'🚆',Shopping:'🛍️','Bills & utilities':'💡',Housing:'🏠',Cash:'💵',Transfers:'⇄',Health:'🩺',Income:'💷'};
+function mIcon(s){s=String(s||'');for(const[r,e]of MICON)if(r.test(s))return e;for(const c in CATS)if(CATS[c].test(s))return CICON[c]||'';return CICON[s]||''}
+function txIcon(t){return mIcon(t.desc)||CICON[t.cat]||'•'}
 const hue=s=>{let h=0;for(const ch of String(s))h=(h*31+ch.charCodeAt(0))%360;return h};
-const av=s=>{const w=String(s).replace(/[^A-Za-z ]/g,' ').trim().split(/\s+/);const t=((w[0]||'?')[0]+((w[1]||w[0]||'')[w[1]?0:1]||'')).toUpperCase(),h1=hue(s);return `<span class="av" style="background:linear-gradient(135deg,hsl(${h1} 75% 55%),hsl(${(h1+50)%360} 70% 45%))">${esc(t)}</span>`};
+const av=s=>{const ic=mIcon(s);if(ic)return `<span class="av av-i" aria-hidden="true">${ic}</span>`;const w=String(s).replace(/[^A-Za-z ]/g,' ').trim().split(/\s+/);const t=((w[0]||'?')[0]+((w[1]||w[0]||'')[w[1]?0:1]||'')).toUpperCase(),h1=hue(s);return `<span class="av" aria-hidden="true" style="background:linear-gradient(135deg,hsl(${h1} 75% 55%),hsl(${(h1+50)%360} 70% 45%))">${esc(t)}</span>`};
 function countUp(el,to,fmt){const from=+el.dataset.v||0;el.dataset.v=to;if(RM.matches||from===to){el.textContent=fmt(to);return}
  const t0=performance.now(),d=700;cancelAnimationFrame(el._r);const step=t=>{const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=fmt(from+(to-from)*e);if(k<1)el._r=requestAnimationFrame(step);else el.textContent=fmt(to)};el._r=requestAnimationFrame(step);
  setTimeout(()=>{if(el.dataset.v==to)el.textContent=fmt(to)},d+100)}
@@ -772,13 +908,13 @@ function renderTips(){if(!$('tipsList'))return;const tips=buildTips();$('tipCoun
  $('tipsList').innerHTML=tips.length?tips.map(t=>`<div class="tip ${t.k}"><div class="ti">${t.i}</div><div><b>${esc(t.t)}</b><div class="td">${esc(t.d)}</div></div></div>`).join(''):'<div class="muted">No tips yet — upload a few months of statements, set budgets or goals, and insights will show up here.</div>'}
 
 // ---- sync / encryption
-function payload(){return{app:'steve-finance',version:5,exported:new Date().toISOString(),tx,rules,budgets,settings:{...settings,lastBackup:todayStr()},goals,debts,debtStrat,custRules,customCats,assets,nwSnaps,subFlags}}
+function payload(){return{app:'steve-finance',version:6,exported:new Date().toISOString(),tx,rules,budgets,settings:{...settings,lastBackup:todayStr()},goals,debts,debtStrat,custRules,customCats,assets,nwSnaps,subFlags,renewals,isaLog}}
 async function deriveKey(pass,salt){const enc=new TextEncoder(),base=await crypto.subtle.importKey('raw',enc.encode(pass),'PBKDF2',false,['deriveKey']);
  return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:250000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
 async function encryptBackup(pass){const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),key=await deriveKey(pass,salt);
  const ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,new TextEncoder().encode(JSON.stringify(payload())));
  const buf=new Uint8Array(16+12+ct.byteLength);buf.set(salt,0);buf.set(iv,16);buf.set(new Uint8Array(ct),28);
- let bin='';buf.forEach(b=>bin+=String.fromCharCode(b));return JSON.stringify({app:'steve-finance',version:5,encrypted:true,kdf:'PBKDF2-SHA256-250k',cipher:'AES-GCM',data:btoa(bin)},null,1)}
+ let bin='';buf.forEach(b=>bin+=String.fromCharCode(b));return JSON.stringify({app:'steve-finance',version:6,encrypted:true,kdf:'PBKDF2-SHA256-250k',cipher:'AES-GCM',data:btoa(bin)},null,1)}
 async function decryptBackup(obj,pass){if(!obj.encrypted)return obj;if(!pass)throw new Error('This backup is password-protected');
  const raw=Uint8Array.from(atob(obj.data),c=>c.charCodeAt(0)),salt=raw.slice(0,16),iv=raw.slice(16,28),ct=raw.slice(28),key=await deriveKey(pass,salt);
  try{const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv},key,ct);return JSON.parse(new TextDecoder().decode(pt))}catch{throw new Error('Wrong password or damaged file')}}
@@ -808,7 +944,7 @@ $('budSuggest').onclick=()=>{const ps=PER.slice(-4,-1).length?PER.slice(-4,-1):P
 $('file').onchange=e=>{handle(e.target.files);e.target.value=''};$('period').onchange=render;$('q').oninput=()=>renderTx();
 $('pmode').onchange=e=>{settings.mode=e.target.value;$('period').value='';save();render()};$('payday').onchange=e=>{settings.payday=e.target.value;save();render()};
 $('drop').ondragover=e=>e.preventDefault();$('drop').ondrop=e=>{e.preventDefault();handle(e.dataTransfer.files)};
-$('clear').onclick=()=>{if(confirm('Delete all saved transactions, category fixes, budgets, goals and debts? (Make a backup first if unsure.)')){pushUndo();tx=[];rules={};budgets={};goals=[];debts=[];custRules=[];customCats=[];assets=[];nwSnaps=[];subFlags={};saveGoals();saveDebts();save();render()}};
+$('clear').onclick=()=>{if(confirm('Delete all saved transactions, category fixes, budgets, goals and debts? (Make a backup first if unsure.)')){pushUndo();tx=[];rules={};budgets={};goals=[];debts=[];custRules=[];customCats=[];assets=[];nwSnaps=[];subFlags={};renewals=[];isaLog=[];saveR7();saveGoals();saveDebts();save();render()}};
 function download(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
 $('expCsv').onclick=()=>{const cur=currentPeriod(),rows=tx.filter(t=>inP(t,cur)).sort((a,b)=>a.date.localeCompare(b.date));
  download(`steve-transactions-${cur?cur.key:'all'}.csv`,Papa.unparse({fields:['Date','Account','Description','Category','Amount'],data:rows.map(t=>[t.date,t.acct,t.desc,t.cat,t.amt.toFixed(2)])}),'text/csv')};
@@ -818,7 +954,7 @@ $('restore').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!
  const replace=document.querySelector('input[name=merge][value=replace]').checked;
  if(replace){if(tx.length&&!confirm(`Replace your current ${tx.length} transactions with the ${d.tx.length} in this backup?`))return;
   tx=d.tx.filter(t=>t&&t.date&&typeof t.amt==='number');rules=d.rules||{};budgets=d.budgets||{};settings=Object.assign(settings,d.settings||{});goals=Array.isArray(d.goals)?d.goals:[];debts=Array.isArray(d.debts)?d.debts:[];debtStrat=d.debtStrat||debtStrat;
- custRules=Array.isArray(d.custRules)?d.custRules:[];customCats=Array.isArray(d.customCats)?d.customCats:[];assets=Array.isArray(d.assets)?d.assets:[];nwSnaps=Array.isArray(d.nwSnaps)?d.nwSnaps:[];subFlags=d.subFlags||{};
+ custRules=Array.isArray(d.custRules)?d.custRules:[];customCats=Array.isArray(d.customCats)?d.customCats:[];assets=Array.isArray(d.assets)?d.assets:[];nwSnaps=Array.isArray(d.nwSnaps)?d.nwSnaps:[];subFlags=d.subFlags||{};renewals=Array.isArray(d.renewals)?d.renewals:[];isaLog=Array.isArray(d.isaLog)?d.isaLog:[];saveR7();
  saveGoals();saveDebts();save();$('msg').textContent=`Replaced with ${tx.length} transactions from backup.`;}
  else{const n=mergeBackup(d);$('msg').textContent=`Merged backup: ${n} new transactions added (duplicates skipped). Goals/debts/budgets combined.`;}
  markBackup();render()}catch(err){$('msg').textContent='Restore failed: '+err.message}};
@@ -1152,7 +1288,7 @@ let VROWS=[],VH=56,IXMAP=new Map();const VALL=120;
 function rowHTML(t,pos){const iX=IXMAP.get(t),split=t.splits&&t.splits.length,tagH=(t.tags||[]).map(x=>`<span class="chip">${esc(x)}</span>`).join('');
  const catCell=split?`<span class="badge">Split (${t.splits.length})</span><div class="tx-extra">${t.splits.map(s=>esc(s.cat)+' '+GBP(s.amt)).join(' · ')}</div>`:
   `<select aria-label="Category for ${esc(t.desc)}" data-k="${esc(merch(t.desc))}" data-i="${iX}">${CATOPTS(t.cat)}</select>`;
- return `<tr data-i="${iX}" aria-rowindex="${pos+2}"><td class="a">${t.date}</td><td class="a">${esc(t.acct)}${t.manual?' <span class="chip">manual</span>':''}</td><td class="d">${esc(t.desc)}${tagH?'<div class="tx-extra">'+tagH+'</div>':''}${t.notes?`<div class="tx-extra">${esc(t.notes)}</div>`:''}</td><td>${catCell}</td><td class="n ${t.amt<0?'neg':'pos'}">${GBP(t.amt)}</td>
+ return `<tr data-i="${iX}" aria-rowindex="${pos+2}"><td class="a">${t.date}</td><td class="a">${esc(t.acct)}${t.manual?' <span class="chip">manual</span>':''}</td><td class="d"><span class="mi" aria-hidden="true">${txIcon(t)}</span>${esc(t.desc)}${t.xfer?' <span class="chip xf" title="Matched transfer between your own accounts">⇄ transfer</span>':''}${tagH?'<div class="tx-extra">'+tagH+'</div>':''}${t.notes?`<div class="tx-extra">${esc(t.notes)}</div>`:''}</td><td>${catCell}</td><td class="n ${t.amt<0?'neg':'pos'}">${GBP(t.amt)}</td>
  <td class="act"><button class="alt tx-split" type="button" data-i="${iX}" title="Edit, split, notes and tags" aria-label="Edit ${esc(t.desc)}">Edit</button><button class="alt tx-del" type="button" data-i="${iX}" title="Delete" aria-label="Delete ${esc(t.desc)}">✕</button></td></tr>`}
 let _catOpts={};const CATOPTS=c=>{const cs=allCats(),k=cs.join('|');if(_catOpts.k!==k)_catOpts={k,base:cs.map(x=>`<option>${esc(x)}</option>`).join('')};return _catOpts.base.replace(`<option>${esc(c)}</option>`,`<option selected>${esc(c)}</option>`)};
 function renderTx(f){f=f||tx.filter(t=>inP(t,currentPeriod())).sort((a,b)=>b.date.localeCompare(a.date));
@@ -1296,7 +1432,354 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('report').hidden
  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){links.forEach(a=>a.removeAttribute('aria-current'));const a=links.find(a=>a.getAttribute('href')==='#'+en.target.id);a&&a.setAttribute('aria-current','page')}}),{rootMargin:'-45% 0px -50% 0px'});
  links.forEach(a=>{const t=document.querySelector(a.getAttribute('href'));t&&io.observe(t)})})();
 
-window.steve={migrateBackup,detectLayout,applyMap,csvGrid,classifyRows,catChanges,leaderboard,unusualTx,priceChanges,buildReport,debtPlan,encryptBackup,decryptBackup,mergeBackup,payload,parsePdfLines,fromOFX,fromQIF,buildTips,taxYears,taxRange,inTax,recurring,monthlyBasis,goalStatus,safeToSpend,forecast,ruleMatch,applyRulesTo,parts,flatten,budgetRows,rolledIn,spendIn,yearReview,nwNow,snapWorth,undo,redo,pushUndo,allCats};
+// ===================== Round 7: UK bills & renewals, Self Assessment, ISA, what-if, income & transfers, patterns, tour =====================
+const R7NEWS='2026-11';
+let renewals=LS('steve_renewals',[]),isaLog=LS('steve_isa',[]),_xv=-1;
+const saveR7=()=>{STORE.setItem('steve_renewals',JSON.stringify(renewals));STORE.setItem('steve_isa',JSON.stringify(isaLog))};
+const saveSettings=()=>STORE.setItem('steve_settings',JSON.stringify(settings));
+const rid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const SAo=()=>settings.sa=Object.assign({lastBill:'',pct:25,mtd:false,rules:[]},settings.sa||{});
+const WIo=()=>settings.whatIf=Object.assign({cat:'',pct:0,pay:'',house:'',one:'',oneDate:''},settings.whatIf||{});
+const byDate=(a,b)=>a.date.localeCompare(b.date);
+const plural=(n,w)=>n+' '+w+(n===1?'':'s');
+const inDays=d=>{const n=diff(todayStr(),d);return n===0?'today':n===1?'tomorrow':n>0?`in ${n} days`:n===-1?'yesterday':`${-n} days ago`};
+const fmtM=d=>D(d).toLocaleDateString('en-GB',{month:'short',year:'numeric',timeZone:'UTC'});
+const hasNum=v=>v!==''&&v!=null&&isFinite(+v);
+MODALS.push('wnModal');
+
+// ---- UK working days (England & Wales bank holidays, built in: no lookups)
+const UKBH=new Set(['2025-01-01','2025-04-18','2025-04-21','2025-05-05','2025-05-26','2025-08-25','2025-12-25','2025-12-26','2026-01-01','2026-04-03','2026-04-06','2026-05-04','2026-05-25','2026-08-31','2026-12-25','2026-12-28',
+ '2027-01-01','2027-03-26','2027-03-29','2027-05-03','2027-05-31','2027-08-30','2027-12-27','2027-12-28','2028-01-03','2028-04-14','2028-04-17','2028-05-01','2028-05-29','2028-08-28','2028-12-25','2028-12-26']);
+const isWorkday=s=>{const w=D(s).getUTCDay();return w>0&&w<6&&!UKBH.has(s)};
+const workBack=s=>{let i=0;while(!isWorkday(s)&&i++<10)s=addDays(s,-1);return s};
+const lastWorkday=ym=>workBack(addDays(addMonths(ym+'-01',1,1),-1));
+
+// ---- payday: 4-weekly and last-working-day patterns, bank-holiday aware
+const _detectPayday6=detectPayday;let _dpC=null;
+detectPayday=function(){if(_dpC&&_dpC.v===DATA_VER&&_dpC.n===tx.length)return _dpC.r;let d=_detectPayday6();
+ if(d){const s=salaryCredits(),src=merch(s[s.length-1].desc),main=s.filter(t=>merch(t.desc)===src).map(t=>t.date);
+  const iv=main.slice(1).map((x,i)=>diff(main[i],x));
+  if(main.length>=4&&iv.every(x=>x>=27&&x<=29))d={...d,rule:'4w',last:main[main.length-1],label:'every 4 weeks'};
+  else if(d.dates.length>=3&&d.dates.every(x=>x===lastWorkday(x.slice(0,7)))&&new Set(d.dates.map(x=>x.slice(8))).size>1)d={...d,rule:'lwd',label:'last working day of the month'}}
+ _dpC={v:DATA_VER,n:tx.length,r:d};return d};
+const _nextPayday6=nextPayday;
+nextPayday=function(from){const d=detectPayday();
+ if(d&&d.rule==='4w'){let p=d.last,i=0;while(workBack(p)<=from&&i++<200)p=addDays(p,28);return workBack(p)}
+ if(d&&d.rule==='lwd'){const m=from.slice(0,7);let p=lastWorkday(m);if(p<=from)p=lastWorkday(addMonths(m+'-01',1,1).slice(0,7));return p}
+ const p=_nextPayday6(from);let q=workBack(p);if(q<=from)q=workBack(_nextPayday6(p));return q};
+
+// ---- regular income (salary, pension, benefits, rent received...)
+function recurringIncome(){if(recurringIncome._v===DATA_VER&&recurringIncome._n===tx.length)return recurringIncome._r;const g={},today=todayStr(),out=[];
+ tx.forEach(t=>{if(t.amt>0&&t.cat!=='Transfers'&&!t.xfer){const k=merch(t.desc);(g[k]=g[k]||[]).push(t)}});
+ for(const[k,list]of Object.entries(g)){if(list.length<3)continue;const L=list.slice().sort(byDate),iv=L.slice(1).map((t,i)=>diff(L[i].date,t.date)),mi=median(iv);
+  const c=iv.every(x=>x>=27&&x<=29)?{n:'4-weekly',d:28,py:13,lo:27,hi:29}:CAD.find(c=>c.n!=='year'&&mi>=c.lo&&mi<=c.hi);if(!c)continue;
+  if(iv.filter(x=>x>=c.lo&&x<=c.hi).length/iv.length<0.7)continue;
+  const am=L.map(t=>t.amt),med=median(am);if(am.filter(a=>Math.abs(a-med)<=Math.max(5,0.25*med)).length/am.length<0.7)continue;
+  const last=L[L.length-1];if(diff(last.date,today)>c.d*2+10)continue;let next,i=0;
+  if(c.n==='month'||c.n==='quarter'){const day=Math.round(median(L.map(t=>+t.date.slice(8)))),st=c.n==='month'?1:3;next=workBack(addMonths(last.date.slice(0,8)+'01',st,day));while(next<today&&i++<6)next=workBack(addMonths(next.slice(0,8)+'01',st,day))}
+  else{next=addDays(last.date,c.d);while(next<today&&i++<60)next=addDays(next,c.d)}
+  out.push({key:k,name:last.desc,cad:c.n,amt:Math.round(med*100)/100,monthly:med*c.py/12,annual:med*c.py,next,last:last.date,count:L.length,cat:last.cat})}
+ recurringIncome._v=DATA_VER;recurringIncome._n=tx.length;return recurringIncome._r=out.sort((a,b)=>b.monthly-a.monthly)}
+
+// ---- transfers between your own accounts: matched so they never count as spending or income
+const XFER_RX=/\b(transfer|tfr|trf|to a\/c|from a\/c|payment received|credit card payment|payment thank you|standing order|faster payment|savings?|l?isa|pot|top ?up|moved|amex|barclaycard|bill payment|own account)\b/i;
+function matchTransfers(){if(settings.autoXfer===false)return 0;const by=new Map();let n=0;
+ tx.forEach(t=>{if(t.xfer||t.noXfer||t.manual||(t.splits&&t.splits.length))return;const k=Math.round(Math.abs(t.amt)*100);if(!k)return;let L=by.get(k);if(!L)by.set(k,L=[]);L.push(t)});
+ for(const L of by.values()){if(L.length<2)continue;const outs=L.filter(t=>t.amt<0).sort(byDate),ins=L.filter(t=>t.amt>0).sort(byDate);if(!ins.length)continue;
+  for(const o of outs){let best=null,bd=4;for(const i of ins){if(i.xfer||i.acct===o.acct)continue;const d=Math.abs(diff(o.date,i.date));if(d>3||d>=bd)continue;
+    const kw=XFER_RX.test(o.desc)||XFER_RX.test(i.desc)||o.cat==='Transfers'||i.cat==='Transfers';if(!kw&&(d>0||-o.amt<100||i.cat==='Income'))continue;best=i;bd=d}
+   if(best){const id='x'+rid();[o,best].forEach(t=>{t.xfer=id;if(t.cat!=='Transfers'){t.xferCat=t.cat;t.cat='Transfers'}});n++}}}
+ return n}
+function unlinkTransfer(id){pushUndo();tx.filter(t=>t.xfer===id).forEach(t=>{if(t.xferCat){t.cat=t.xferCat;delete t.xferCat}delete t.xfer;t.noXfer=true});save();render();toast('Unlinked: both payments count normally again','Undo',undo)}
+function accountList(){const m={};tx.forEach(t=>{let a=m[t.acct];if(!a)a=m[t.acct]={name:t.acct,n:0,first:t.date,last:t.date,after:0};a.n++;if(t.date<a.first)a.first=t.date;if(t.date>a.last)a.last=t.date});
+ const AB=settings.acctBal||{};return Object.values(m).map(a=>{const ab=AB[a.name];let bal=null;
+  if(ab&&hasNum(ab.bal))bal=Math.round((+ab.bal+tx.reduce((s,t)=>t.acct===a.name&&t.date>ab.date?s+t.amt:s,0))*100)/100;
+  return{...a,bal,asOf:ab&&ab.date,card:/card|amex|credit|visa|mastercard/i.test(a.name)}}).sort((a,b)=>b.n-a.n)}
+
+// ---- Self Assessment helper (tags sa-income / sa-expense)
+function applySaRules(){const R=SAo().rules;if(!R.length)return 0;let n=0;
+ tx.forEach(t=>{const tg=t.tags||[];if(tg.includes('sa-income')||tg.includes('sa-expense')||(t.noSa))return;const d=t.desc.toLowerCase(),r=R.find(r=>r.val&&d.includes(r.val.toLowerCase()));if(!r)return;t.tags=[...tg,r.tag];n++});return n}
+function saYear(y){const rows=tx.filter(t=>inTax(t,y)),inc=rows.filter(t=>(t.tags||[]).includes('sa-income')),exp=rows.filter(t=>(t.tags||[]).includes('sa-expense'));
+ const I=Math.round(inc.reduce((s,t)=>s+t.amt,0)*100)/100,E=Math.round(-exp.reduce((s,t)=>s+t.amt,0)*100)/100;return{I,E,profit:Math.round((I-E)*100)/100,inc,exp,allow:Math.max(0,I-1000)}}
+function saActive(){const S=SAo();return S.rules.length>0||+S.lastBill>0||tx.some(t=>t.tags&&(t.tags.includes('sa-income')||t.tags.includes('sa-expense')))}
+function saKeyDates(){const S=SAo(),today=todayStr(),y=+today.slice(0,4),out=[],ty=(a)=>`${a}/${String(a+1).slice(2)}`;
+ for(let yy=y-1;yy<=y+1;yy++){const prev=ty(yy-1),cur=ty(yy);
+  out.push({date:`${yy}-10-05`,k:'reg',title:`Register for Self Assessment (${prev})`,text:`Only if you started self-employment or letting in ${prev} and haven't registered yet.`});
+  out.push({date:`${yy}-10-31`,k:'paper',title:`Paper tax return deadline (${prev})`,text:'Filing online gives you until 31 January.'});
+  out.push({date:`${yy+1}-01-31`,k:'jan',title:`Online return and tax due (${prev})`,text:`File online and pay what you owe for ${prev}, plus your 1st payment on account for ${cur} if you make them.`});
+  out.push({date:`${yy+1}-07-31`,k:'jul',title:`2nd payment on account (${cur})`,text:'Only if HMRC asked you to make payments on account.'});
+  if(S.mtd)[['08-07',yy],['11-07',yy],['02-07',yy+1],['05-07',yy+1]].forEach(([md,yr],i)=>out.push({date:`${yr}-${md}`,k:'mtd'+(i+1),title:`Making Tax Digital update ${i+1} (${cur})`,text:'Send your quarterly update from your MTD software.'}))}
+ const seen=new Set();return out.filter(x=>x.date>=today&&x.date<=addDays(today,366)&&!seen.has(x.date+x.k)&&seen.add(x.date+x.k)).sort((a,b)=>a.date.localeCompare(b.date))}
+const MTD={'202425':[50000,'6 April 2026'],'202526':[30000,'6 April 2027'],'202627':[20000,'6 April 2028']};
+
+// ---- ISA allowance
+const ISA_MAX=20000,LISA_MAX=4000,ISA_RX=/\b(l?isa|lifetime isa|cash isa|s&s isa|stocks (and|&) shares isa)\b/i,ISAT={cash:'Cash ISA',ss:'Stocks & shares ISA',lisa:'Lifetime ISA',ifisa:'Innovative finance ISA'};
+const isaType=s=>/lifetime|\blisa\b/i.test(s)?'lisa':/innovative|ifisa/i.test(s)?'ifisa':/stocks|shares|s&s|invest|vanguard|trading ?212|hargreaves|aj bell|freetrade|nutmeg|moneybox/i.test(s)?'ss':'cash';
+function isaRows(y){const auto=tx.filter(t=>t.amt<0&&!t.noIsa&&inTax(t,y)&&ISA_RX.test(t.desc)).map(t=>({auto:true,ref:t,date:t.date,amt:-t.amt,type:isaType(t.desc),where:t.desc}));
+ const man=isaLog.filter(e=>inTax(e,y)).map(e=>({auto:false,ref:e,date:e.date,amt:+e.amt||0,type:e.type||'cash',where:e.provider||ISAT[e.type]||'ISA'}));
+ return auto.concat(man).sort((a,b)=>b.date.localeCompare(a.date))}
+
+// ---- household bills (annual view) and renewals
+const HB=[{k:'council',n:'Council tax',i:'🏛️',r:/council tax|\bctax\b|borough council|district council|city council/i},{k:'home',n:'Rent or mortgage',i:'🏠',r:/\b(rent|mortgage|letting|lettings)\b/i},{k:'energy',n:'Gas & electricity',i:'⚡',r:/british gas|octopus|\bedf\b|\be\.?on\b|\bovo\b|scottish power|so energy|utility warehouse|outfox|shell energy|\benergy\b/i},
+ {k:'water',n:'Water',i:'💧',r:/\bwater\b|thames|severn trent|united utilities|wessex|affinity/i},{k:'tv',n:'TV licence',i:'📺',r:/tv licen[cs]e|\btvl\b/i},
+ {k:'net',n:'Broadband & phone',i:'📶',r:/\bbt\b|\bsky\b|virgin media|plusnet|talktalk|vodafone|\bo2\b|\bee\b|\bthree\b|giffgaff|hyperoptic|community fibre|broadband/i},
+ {k:'ins',n:'Insurance',i:'🛡️',r:/insurance|aviva|admiral|direct line|\blv\b|\baxa\b|hastings|churchill|esure|more ?than/i},{k:'car',n:'Vehicle tax & MOT',i:'🚗',r:/dvla|vehicle tax|\bmot\b/i}];
+function householdBills(){const today=todayStr(),from=addDays(today,-365),subs=recurring(),months=[...new Set(tx.filter(t=>t.date>from&&t.date<=today).map(t=>t.date.slice(0,7)))];
+ const rows=HB.map(h=>({k:h.k,n:h.n,i:h.i,r:h.r,paid:0,cnt:0,sub:0,note:'',names:new Set()}));
+ tx.forEach(t=>{if(!isSpend(t)||t.date<=from||t.date>today)return;const r=rows.find(r=>r.r.test(t.desc));if(!r)return;r.paid-=t.amt;r.cnt++;r.names.add(merch(t.desc))});
+ const febMar=months.some(m=>/-0[23]$/.test(m)),ctFM=tx.some(t=>isSpend(t)&&t.date>from&&/-0[23]-/.test(t.date)&&HB[0].r.test(t.desc));
+ subs.forEach(s=>{const r=rows.find(r=>r.r.test(s.name));if(!r)return;
+  if(r.k==='council'&&s.cad==='month'){const n=febMar&&ctFM?12:10;r.sub+=s.latest*n;r.note=febMar?(ctFM?'12 monthly instalments':'10 instalments (no Feb/Mar payments seen)'):'assumes 10 instalments, Apr–Jan'}else r.sub+=s.annual});
+ const full=months.length>=12;
+ return rows.filter(r=>r.cnt||r.sub).map(r=>{let annual,basis;
+  if(full&&r.k!=='council'&&r.cnt){annual=r.paid;basis='paid in the last 12 months'}else if(r.sub){annual=r.sub;basis=r.note||'regular payments, projected'}else{annual=r.paid;basis=`paid in the last ${plural(months.length,'month')}`}
+  return{k:r.k,n:r.n,i:r.i,annual:Math.round(annual*100)/100,monthly:annual/12,basis,names:[...r.names].slice(0,3),paid:r.paid}}).sort((a,b)=>b.annual-a.annual)}
+const RK={car:['🚗','Car insurance'],home:['🏠','Home insurance'],mot:['🔧','MOT'],vtax:['🚙','Vehicle tax'],tv:['📺','TV licence'],breakdown:['🛟','Breakdown cover'],pet:['🐾','Pet insurance'],travel:['✈️','Travel insurance'],
+ phone:['📱','Phone contract ends'],energy:['⚡','Energy fix ends'],mortgage:['🏦','Mortgage deal ends'],other:['📌','Other']};
+const RSUG=[[/tv licen/i,'tv'],[/dvla|vehicle tax/i,'vtax'],[/\bmot\b|kwik fit|halfords/i,'mot'],[/\b(aa|rac|green flag)\b/i,'breakdown'],[/\b(car|motor)\b.*insurance|admiral|hastings|churchill|direct line|esure|\blv\b/i,'car'],
+ [/home insurance|contents|buildings/i,'home'],[/\bpet(plan)?\b|bought by many/i,'pet'],[/insurance|aviva|\baxa\b/i,'home']];
+function renewalSuggestions(){const today=todayStr(),from=addDays(today,-400),have=new Set([...renewals.map(r=>r.src||''),...renewals.map(r=>merch(r.name))]),dis=settings.rnDismiss||[],out=new Map(),cnt={};
+ tx.forEach(t=>{if(t.amt<0&&t.date>from){const k=merch(t.desc);cnt[k]=(cnt[k]||0)+1}});
+ recurring().filter(s=>s.cad==='year').forEach(s=>{if(!have.has(s.key))out.set(s.key,{src:s.key,name:s.name,due:s.next,cost:s.latest,kind:(RSUG.find(x=>x[0].test(s.name))||[0,'other'])[1]})});
+ tx.forEach(t=>{if(!isSpend(t)||t.date<=from||-t.amt<40)return;const m=RSUG.find(x=>x[0].test(t.desc));if(!m)return;const k=merch(t.desc);if(have.has(k)||out.has(k)||cnt[k]>2)return;
+  let due=addMonths(t.date,12),i=0;while(due<today&&i++<3)due=addMonths(due,12);out.set(k,{src:k,name:t.desc,due,cost:-t.amt,kind:m[1]})});
+ return[...out.values()].filter(s=>!dis.includes(s.src)).slice(0,4)}
+function dueReminders(){const today=todayStr(),R=[];
+ renewals.forEach(r=>{if(!r.due)return;const d=diff(today,r.due),lead=+r.remind||21;if(d>lead||d<-14)return;
+  R.push({id:`rn:${r.id}:${r.due}:${d<=3?'b':'a'}`,t:'renew',title:`${r.name} renews ${d<0?'(overdue)':inDays(r.due)}`,body:`${fmtD(r.due)} ${r.due.slice(0,4)}${r.cost?' · last time '+GBP(+r.cost):''}. Compare quotes before it rolls over.`,
+   h:`🔔 ${esc(r.name)} renews ${d<0?'(overdue)':inDays(r.due)} · ${fmtD(r.due)}${r.cost?' · '+GBP(+r.cost)+' last time':''}`})});
+ if(saActive())saKeyDates().filter(x=>diff(today,x.date)<=30).forEach(x=>R.push({id:`sa:${x.date}:${x.k}`,t:'tax',title:`${x.title} ${inDays(x.date)}`,body:x.text,h:`🧾 ${esc(x.title)}: ${inDays(x.date)} (${fmtD(x.date)})`}));
+ return R}
+const _alerts6=alerts;alerts=function(subs,cur){const A=_alerts6(subs,cur);dueReminders().forEach(r=>A.push({t:r.t,h:r.h}));return A};
+async function notifyR7(){if(!settings.remind||!('Notification'in window)||Notification.permission!=='granted')return 0;const today=todayStr(),seen=LS('steve_notified_r',{});let n=0;
+ const locked=!!(window.LOCK&&LOCK.enabled());let reg=null;try{reg='serviceWorker'in navigator&&navigator.serviceWorker.getRegistration?await navigator.serviceWorker.getRegistration():null}catch(e){}
+ for(const r of dueReminders().filter(r=>!seen[r.id])){const title=locked?'Steve reminder':'Steve: '+r.title,opt={body:locked?'Something is due or renewing soon. Open Steve to see it.':r.body,tag:r.id,icon:'icons/icon-192.png'};
+  try{if(reg&&reg.showNotification)await reg.showNotification(title,opt);else new Notification(title,opt);seen[r.id]=today;n++}catch(e){}}
+ Object.keys(seen).forEach(k=>{if(diff(seen[k],today)>90)delete seen[k]});STORE.setItem('steve_notified_r',JSON.stringify(seen));return n}
+const icsEsc=s=>String(s).replace(/[\\;,]/g,m=>'\\'+m).replace(/\n/g,'\\n');
+function renewalsICS(){const z=d=>d.replace(/-/g,''),now=new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';
+ const ev=renewals.filter(r=>r.due).flatMap(r=>{const e=+r.every;return['BEGIN:VEVENT','UID:'+r.id+'@steve-finance.local','DTSTAMP:'+now,'DTSTART;VALUE=DATE:'+z(r.due),'DTEND;VALUE=DATE:'+z(addDays(r.due,1)),
+  'SUMMARY:'+icsEsc(r.name+' renews'+(r.cost?' (was '+GBP(+r.cost)+')':'')),...(e===12?['RRULE:FREQ=YEARLY']:e===1?['RRULE:FREQ=MONTHLY']:e?['RRULE:FREQ=MONTHLY;INTERVAL='+e]:[]),
+  'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsEsc(r.name+' renews soon: compare quotes'),'TRIGGER:-P'+(+r.remind||21)+'D','END:VALARM','END:VEVENT']});
+ return['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Steve Finance//Renewals//EN','CALSCALE:GREGORIAN',...ev,'END:VCALENDAR'].join('\r\n')}
+
+// ---- what if
+function whatIf(sc,months){months=months||12;const F=forecast(months),B=F.B,today=todayStr(),ms=B.months||[];
+ const avgCat=c=>{if(!ms.length||!c)return 0;let s=0;flatten(tx.filter(t=>isSpend(t)&&ms.includes(t.date.slice(0,7)))).forEach(t=>{if(t.cat===c)s-=t.amt});return s/ms.length};
+ const catAvg=avgCat(sc.cat),cut=sc.cat?catAvg*(+sc.pct||0)/100:0,curPay=F.salAmt||0,payD=hasNum(sc.pay)?+sc.pay-curPay:0,curHouse=avgCat('Housing'),houseD=hasNum(sc.house)?+sc.house-curHouse:0;
+ const delta=cut+payD-houseD,one=hasNum(sc.one)?+sc.one:0,oneDate=sc.oneDate||addDays(today,30);
+ const pts=F.pts.map(p=>({d:p.d,b:p.b+delta*diff(today,p.d)/30.44-(one&&p.d>=oneDate?one:0)}));let low=pts[0];pts.forEach(p=>{if(p.b<low.b)low=p});
+ const s0=B.income-B.bills-B.variable,s1=s0+delta;
+ const eta=(s,start)=>{let cum=start||0;return goals.filter(g=>(+g.target||0)>(+g.saved||0)).sort((a,b)=>(a.deadline||'').localeCompare(b.deadline||'')).map(g=>{cum+=g.target-(+g.saved||0);const m=s>0?Math.ceil(cum/s):null;return{id:g.id,name:g.name,deadline:g.deadline,m,date:m==null?null:addMonths(today,m)}})};
+ return{F,pts,low,end:pts[pts.length-1].b,delta,cut,catAvg,payD,curPay,houseD,curHouse,s0,s1,one,oneDate,g0:eta(s0),g1:eta(s1,one),n:B.n}}
+
+// ---- spending patterns: heatmap + flow
+function heatData(){if(!tx.length)return null;const subs=new Set(recurring().map(s=>s.key));let end=todayStr();const mx=tx.reduce((a,t)=>t.date>a?t.date:a,'');if(mx<end)end=mx;
+ const endW=addDays(end,6-((D(end).getUTCDay()+6)%7)),start=addDays(endW,-83),day={};
+ flatten(tx.filter(t=>isSpend(t)&&t.date>=start&&t.date<=end&&!subs.has(merch(t.desc)))).forEach(t=>{if(t.cat!=='Housing')day[t.date]=(day[t.date]||0)-t.amt});
+ const cells=[];for(let i=0;i<84;i++){const d=addDays(start,i);cells.push({d,v:d>end?null:Math.round((day[d]||0)*100)/100,w:Math.floor(i/7),dow:i%7})}
+ const T=[0,0,0,0,0,0,0],N=[0,0,0,0,0,0,0];cells.forEach(c=>{if(c.v!=null){T[c.dow]+=c.v;N[c.dow]++}});
+ return{cells,start,end,avg:T.map((t,i)=>N[i]?t/N[i]:0),max:Math.max(1,...cells.map(c=>c.v||0)),total:T.reduce((a,b)=>a+b,0)}}
+function flowData(p){const L=tx.filter(t=>inP(t,p)),inc={},sp={};
+ L.filter(isIn).forEach(t=>{const k=/salary|wages|payroll/i.test(t.desc)?'Salary':merch(t.desc);inc[k]=(inc[k]||0)+t.amt});
+ flatten(L.filter(isSpend)).forEach(t=>sp[t.cat]=(sp[t.cat]||0)-t.amt);
+ const top=(o,n,other)=>{const e=Object.entries(o).filter(x=>x[1]>0.005).sort((a,b)=>b[1]-a[1]),h=e.slice(0,n),rest=e.slice(n).reduce((s,x)=>s+x[1],0);if(rest>0.005)h.push([other,rest]);return h};
+ const I=top(inc,3,'Other income'),O=top(sp,6,'Other spending'),ti=I.reduce((s,x)=>s+x[1],0),to=O.reduce((s,x)=>s+x[1],0);
+ if(ti-to>0.005)O.push(['Left over',ti-to]);else if(to-ti>0.005)I.push(['From savings or balance',to-ti]);return{I,O,ti,to}}
+function sankeySVG(F,small){const W=small?380:640,rows=Math.max(F.I.length,F.O.length),H=Math.max(200,Math.min(380,30+rows*(small?44:40))),pad=14,gap=10,nw=12,T=Math.max(F.ti,F.to);if(!T)return'';
+ const k=(H-2*pad-gap*(rows-1)-rows*14)/T,cx=W/2-nw/2,col=n=>n==='Left over'?css('--pos'):n==='From savings or balance'?css('--neg'):catColor(n),inCol=css('--pos')||'#2ee59d';
+ const slot=h=>Math.max(h,30),stack=L=>{const tot=L.reduce((s,x)=>s+slot(Math.max(1.5,x[1]*k)),0)+gap*(L.length-1);let y=Math.max(pad,(H-tot)/2);return L.map(([n,v])=>{const h=Math.max(1.5,v*k),o={n,v,y:y+(slot(h)-h)/2,h};y+=slot(h)+gap;return o})};
+ const Ls=stack(F.I),Rs=stack(F.O),midH=T*k,midY=(H-midH)/2,band=(x0,a,x1,b,h,c,op,t)=>{const xm=(x0+x1)/2;return `<path class="band" d="M${x0},${a.toFixed(1)} C${xm},${a.toFixed(1)} ${xm},${b.toFixed(1)} ${x1},${b.toFixed(1)} L${x1},${(b+h).toFixed(1)} C${xm},${(b+h).toFixed(1)} ${xm},${(a+h).toFixed(1)} ${x0},${(a+h).toFixed(1)} Z" fill="${c}" opacity="${op}"><title>${esc(t)}</title></path>`};
+ const cut=s=>s.length>(small?14:22)?s.slice(0,(small?13:21))+'…':s;let s='',m=midY;
+ Ls.forEach(o=>{const c=o.n==='From savings or balance'?css('--neg'):inCol;s+=band(nw,o.y,cx,m,o.h,c,.32,`${o.n}: ${GBP(o.v)}`);s+=`<rect x="0" y="${o.y.toFixed(1)}" width="${nw}" height="${o.h.toFixed(1)}" rx="3" fill="${c}"/>`;m+=o.h});
+ m=midY;Rs.forEach(o=>{const c=col(o.n);s+=band(cx+nw,m,W-nw,o.y,o.h,c,.42,`${o.n}: ${GBP(o.v)}`);s+=`<rect x="${W-nw}" y="${o.y.toFixed(1)}" width="${nw}" height="${o.h.toFixed(1)}" rx="3" fill="${c}"/>`;m+=o.h});
+ s+=`<rect x="${cx}" y="${midY.toFixed(1)}" width="${nw}" height="${midH.toFixed(1)}" rx="4" fill="url(#rg)"/>`;
+ Ls.forEach(o=>s+=`<text x="${nw+6}" y="${(o.y+o.h/2-2).toFixed(1)}">${esc(cut(o.n))}</text><text class="sm" x="${nw+6}" y="${(o.y+o.h/2+11).toFixed(1)}">${GBP(o.v)}</text>`);
+ Rs.forEach(o=>s+=`<text x="${W-nw-6}" y="${(o.y+o.h/2-2).toFixed(1)}" text-anchor="end">${esc(cut(o.n))}</text><text class="sm" x="${W-nw-6}" y="${(o.y+o.h/2+11).toFixed(1)}" text-anchor="end">${GBP(o.v)}</text>`);
+ const lab=`Money flow. In: ${F.I.map(x=>x[0]+' '+GBP(x[1])).join(', ')}. Out: ${F.O.map(x=>x[0]+' '+GBP(x[1])).join(', ')}.`;
+ const SVH=Math.max(H,...Ls.concat(Rs).map(o=>o.y+o.h+pad+8));return `<svg viewBox="0 0 ${W} ${SVH.toFixed(0)}" role="img" aria-label="${esc(lab)}" focusable="false">${s}</svg>`}
+
+// ================= rendering =================
+function renderAccounts(){if(!$('acctCard'))return;const A=accountList(),known=A.filter(a=>a.bal!=null),tot=known.reduce((s,a)=>s+a.bal,0);
+ $('acctTotal').textContent=known.length?`· ${GBP(tot)} across ${plural(known.length,'account')}`:A.length?`· ${plural(A.length,'account')}`:'';
+ $('acctList').innerHTML=A.length?A.map((a,i)=>`<div class="acct" data-a="${esc(a.name)}"><span class="av av-i" aria-hidden="true">${a.card?'💳':'🏦'}</span><div class="ri"><b>${esc(a.name)}</b><div class="muted">${plural(a.n,'transaction')} · ${fmtD(a.first)} – ${fmtD(a.last)} ${a.last.slice(0,4)}${a.asOf?' · balance set '+fmtD(a.asOf):''}</div></div>
+  <input class="abal" type="number" step="0.01" inputmode="decimal" placeholder="${a.card?'Owed £':'Balance £'}" value="${a.bal??''}" aria-label="Balance today for ${esc(a.name)}${a.card?' (enter what you owe as a minus)':''}"><button type="button" class="alt ause"${a.bal==null||a.card?' hidden':''} title="Use this balance for safe-to-spend and the forecast">Use for forecast</button><span></span></div>`).join(''):'<div class="muted">Import a statement to see your accounts here.</div>';
+ const RI=recurringIncome();$('incSum').textContent=RI.length?`· ${GBP(RI.reduce((s,x)=>s+x.monthly,0))}/mo`:'';const det=detectPayday();
+ $('incList').innerHTML=(RI.length?`<div class="scroll"><table><thead><tr><th>From</th><th>How often</th><th class="n">Usually</th><th>Next expected</th></tr></thead><tbody>${RI.map(r=>`<tr><td class="nm">${av(r.key)}<span class="t">${esc(r.name)}</span></td><td>${r.cad}</td><td class="n pos">${GBP(r.amt)}</td><td>${fmtD(r.next)}</td></tr>`).join('')}</tbody></table></div>`:'<div class="muted">Steve looks for money that lands on a steady rhythm: weekly, fortnightly, 4-weekly or monthly. It needs 3 or more payments.</div>')
+  +(det?`<div class="muted" style="margin-top:6px">Payday: ${det.rule?esc(det.label):'around the '+det.day+(['th','st','nd','rd'][(det.day%10>3||[11,12,13].includes(det.day))?0:det.day%10])} · next ${fmtD(nextPayday(todayStr()))} (moved earlier for weekends and UK bank holidays)</div>`:'');
+ const pairs={};tx.forEach(t=>{if(t.xfer)(pairs[t.xfer]=pairs[t.xfer]||[]).push(t)});const P=Object.entries(pairs).filter(([,L])=>L.length===2).map(([id,L])=>{const o=L.find(t=>t.amt<0)||L[0],i=L.find(t=>t.amt>0)||L[1];return{id,o,i,date:o.date,amt:-o.amt}}).sort((a,b)=>b.date.localeCompare(a.date));
+ $('xferSum').textContent=P.length?`· ${plural(P.length,'pair')} · ${GBP(P.reduce((s,p)=>s+p.amt,0))} moved`:'';
+ $('xferList').innerHTML=P.length?P.slice(0,6).map(p=>`<div class="xf-row" data-x="${esc(p.id)}"><span class="muted">${fmtD(p.date)}</span><span class="xd">${esc(p.o.acct)} → ${esc(p.i.acct)} <span class="muted">${esc(p.o.desc)}</span></span><b>${GBP(p.amt)}</b><button type="button" class="alt xun" aria-label="Not a transfer: ${esc(p.o.desc)}">Not a transfer</button></div>`).join('')+(P.length>6?`<div class="muted">+ ${P.length-6} more</div>`:''):'<div class="muted">When money leaves one of your accounts and the same amount lands in another within 3 days, Steve pairs them up here.</div>';
+ $('autoXfer').checked=settings.autoXfer!==false}
+function renderWhatIf(){if(!$('whatIfCard'))return;const sc=WIo(),cats=allCats().filter(c=>!NOBUDGET.includes(c)&&c!=='Housing'),act=document.activeElement;
+ const opts='<option value="">Pick a category</option>'+cats.map(c=>`<option>${esc(c)}</option>`).join('');if($('wiCat').dataset.o!==opts){$('wiCat').innerHTML=opts;$('wiCat').dataset.o=opts}
+ $('wiCat').value=sc.cat;if(act!==$('wiPct'))$('wiPct').value=sc.pct;$('wiPctOut').textContent=(+sc.pct||0)+'%';
+ [['wiPay','pay'],['wiHouse','house'],['wiOne','one'],['wiOneDate','oneDate']].forEach(([id,k])=>{if(act!==$(id))$(id).value=sc[k]??''});
+ const W=whatIf(sc,12);$('wiPay').placeholder=W.curPay?'now '+GBP(W.curPay).replace('.00',''):'e.g. 2600';$('wiHouse').placeholder=W.curHouse?'now '+GBP(W.curHouse).replace('.00',''):'e.g. 950';
+ const changed=Math.abs(W.delta)>0.004||W.one>0,yr=W.delta*12-W.one;
+ $('wiSur').textContent=GBP(W.s1)+'/mo';$('wiSur').className=W.s1<0?'neg':'pos';$('wiSurD').textContent=changed?`now ${GBP(W.s0)}/mo`:'your current pattern';
+ $('wiEnd').textContent=GBP(W.end);$('wiEnd').className=W.end<0?'neg':'';$('wiEndD').textContent=changed?`vs ${GBP(W.F.end)} as things are`:(settings.balance===''||settings.balance==null?'change from today':'');
+ $('wiLow').textContent=GBP(W.low.b);$('wiLow').className=W.low.b<0?'neg':'';$('wiLowD').textContent='on '+fmtD(W.low.d);
+ $('wiYr').textContent=changed?(yr>=0?'+':'−')+GBP(Math.abs(yr)):'—';$('wiYr').className=changed?(yr>=0?'pos':'neg'):'';
+ const notes=[];if(sc.cat&&+sc.pct)notes.push(`Cutting ${sc.cat} by ${sc.pct}% frees about ${GBP(W.cut)}/mo (you spend ~${GBP(W.catAvg)}/mo).`);
+ if(hasNum(sc.pay))notes.push(`Take-home ${GBP(+sc.pay)} vs ${GBP(W.curPay)} now (${W.payD>=0?'+':'−'}${GBP(Math.abs(W.payD))}/mo).`);
+ if(hasNum(sc.house))notes.push(`Rent or mortgage ${GBP(+sc.house)} vs ${GBP(W.curHouse)} now (${W.houseD>0?'+':'−'}${GBP(Math.abs(W.houseD))}/mo).`);
+ if(W.one)notes.push(`One-off ${GBP(W.one)} on ${fmtD(W.oneDate)}.`);
+ $('wiNote').textContent=W.n?(notes.join(' ')||'Change something above to compare.'):'Needs at least one full month of statements.';
+ const step=Math.max(1,Math.round(W.pts.length/60)),I=W.pts.map((_,i)=>i).filter(i=>i%step===0||i===W.pts.length-1);
+ draw('cWhat','line',I.map(i=>fmtD(W.pts[i].d)),[{label:'As things are',data:I.map(i=>Math.round(W.F.pts[i].b*100)/100),borderColor:css('--mut'),borderDash:[6,5],borderWidth:2,pointRadius:0,fill:false,tension:.3},
+  {label:'What if',data:I.map(i=>Math.round(W.pts[i].b*100)/100),borderColor:css('--a1'),backgroundColor:grad('cWhat',css('--a1')),fill:true,tension:.3,pointRadius:0,pointHoverRadius:5,borderWidth:2.5}]);
+ $('wiGoals').innerHTML=W.g0.length?`<table class="wig"><thead><tr><th>Goal</th><th>Wanted by</th><th>As things are</th><th>What if</th></tr></thead><tbody>${W.g0.map((g,i)=>{const h=W.g1[i],d=g.m!=null&&h.m!=null?h.m-g.m:null;
+  return `<tr><td>${esc(g.name)}</td><td>${g.deadline?fmtM(g.deadline):'—'}</td><td>${g.date?fmtM(g.date):'not at this rate'}</td><td>${h.date?fmtM(h.date):'not at this rate'}${d?`<span class="shift ${d<0?'pos':'neg'}">${d<0?'▲ '+plural(-d,'month')+' sooner':'▼ '+plural(d,'month')+' later'}</span>`:''}</td></tr>`}).join('')}</tbody></table>`:'<div class="muted" style="margin-top:8px">Add a savings goal to see how a change moves its date.</div>'}
+function renderSA(){if(!$('saCard'))return;const S=SAo(),years=taxYears(),prev=$('saYear').value;$('saYear').innerHTML=years.map(y=>`<option value="${y.key}">${y.label}</option>`).join('');if(years.some(y=>y.key===prev))$('saYear').value=prev;
+ const y=taxRange($('saYear').value),r=saYear(y),act=document.activeElement;$('saLabel').textContent='· '+y.label;
+ $('saInc').textContent=GBP(r.I);$('saExp').textContent=GBP(r.E);$('saProfit').textContent=GBP(r.profit);$('saProfit').className=r.profit<0?'neg':'pos';
+ $('saTA').textContent=r.I>0?(r.E<1000?`Your costs are under £1,000, so the £1,000 trading or property allowance may suit you better: it would leave ${GBP(r.allow)} to pay tax on`:'Your expenses are more than the £1,000 trading allowance'):'';
+ $('saPctL').textContent=+S.pct||0;$('saAside').textContent=GBP(Math.max(0,r.profit)*(+S.pct||0)/100);$('saShown').textContent=VROWS.length.toLocaleString('en-GB');
+ if(act!==$('saLast'))$('saLast').value=S.lastBill;if(act!==$('saPct'))$('saPct').value=S.pct;$('saMtd').checked=!!S.mtd;
+ const m=MTD[y.key];$('saMtdHint').textContent=m&&r.I>m[0]?`Over ${GBP(m[0]).replace('.00','')} of self-employed or rental income in ${y.label} means Making Tax Digital applies from ${m[1]} (if that's your total qualifying income).`:'';
+ $('saRules').innerHTML=S.rules.length?'Rules: '+S.rules.map((x,i)=>`<span class="chip">"${esc(x.val)}" → ${x.tag==='sa-income'?'income':'expense'} <button type="button" class="linkish sarx" data-i="${i}" aria-label="Remove rule ${esc(x.val)}">✕</button></span>`).join(' '):'';
+ const poa=+S.lastBill>=1000?+S.lastBill/2:0,today=todayStr(),DT=saKeyDates().slice(0,6);
+ $('saDates').innerHTML=DT.map(x=>{const n=diff(today,x.date);return `<li><span class="dd">${fmtD(x.date)} ${x.date.slice(0,4)}</span><span><b>${esc(x.title)}</b> <span class="badge ${n<=30?'late':''}">${inDays(x.date)}</span><div class="muted">${esc(x.text)}${poa&&(x.k==='jan'||x.k==='jul')?' Payment on account ≈ '+GBP(poa)+'.':''}</div></span></li>`}).join('')}
+function renderISA(){if(!$('isaCard'))return;const years=taxYears(),prev=$('isaYear').value;$('isaYear').innerHTML=years.map(y=>`<option value="${y.key}">${y.label}</option>`).join('');if(years.some(y=>y.key===prev))$('isaYear').value=prev;
+ const y=taxRange($('isaYear').value),R=isaRows(y),used=Math.round(R.reduce((s,r)=>s+r.amt,0)*100)/100,lisa=R.filter(r=>r.type==='lisa').reduce((s,r)=>s+r.amt,0),left=ISA_MAX-used,today=todayStr(),cur=today>=y.start&&today<y.end,days=cur?diff(today,y.end):0;
+ $('isaLabel').textContent='· '+y.label;$('isaUsed').textContent=GBP(used);$('isaLeft').textContent=GBP(Math.max(0,left));$('isaLeft').className=left<0?'neg':'pos';
+ const pc=Math.min(100,used/ISA_MAX*100);$('isaBar').style.width=pc+'%';$('isaBar').className=used>ISA_MAX?'over':used>ISA_MAX*.9?'warn':'';$('isaMeter').setAttribute('aria-valuenow',String(Math.round(used)));$('isaMeter').setAttribute('aria-valuetext',`${GBP(used)} of £20,000 used`);
+ $('isaDays').textContent=cur?days:'—';$('isaBy').textContent=cur?'until 5 Apr '+y.end.slice(0,4):'tax year ended';$('isaLisa').textContent=GBP(lisa);
+ const msg=[];if(used>ISA_MAX)msg.push(`<b class="neg">You've paid in ${GBP(used-ISA_MAX)} over the £20,000 allowance.</b> Contact your ISA provider: HMRC can remove the excess and the tax relief on it.`);
+ if(lisa>LISA_MAX)msg.push(`<b class="neg">Lifetime ISA over £4,000 by ${GBP(lisa-LISA_MAX)}.</b>`);if(lisa>0)msg.push(`Lifetime ISA bonus on this year's payments ≈ ${GBP(Math.min(lisa,LISA_MAX)*0.25)}.`);
+ if(cur&&left>0&&used>0)msg.push(`To use the rest, put in about ${GBP(left/Math.max(1,Math.ceil(days/30.44)))} a month until 5 April.`);if(cur&&!used)msg.push('Nothing paid into an ISA this tax year yet.');
+ $('isaMsg').innerHTML=msg.join(' ');
+ $('isaBody').innerHTML=R.length?R.map((r,i)=>`<tr data-i="${i}"><td>${fmtD(r.date)}</td><td class="t">${esc(r.where)}${r.auto?' <span class="chip">auto</span>':''}</td><td>${esc(ISAT[r.type]||r.type)}</td><td class="n">${GBP(r.amt)}</td><td>${r.auto?`<button type="button" class="alt isano" data-k="${esc(txKey(r.ref))}" aria-label="Not an ISA payment: ${esc(r.where)}">Not ISA</button>`:`<button type="button" class="del isadel" data-id="${esc(r.ref.id)}" aria-label="Delete ISA payment ${GBP(r.amt)}">✕</button>`}</td></tr>`).join(''):'<tr><td colspan="5" class="muted">Payments that mention ISA show up here automatically, or add one below.</td></tr>';
+ if(!$('isaDate').value)$('isaDate').value=today}
+function renderBills(){if(!$('billsCard'))return;const B=householdBills(),tot=B.reduce((s,b)=>s+b.annual,0),mx=Math.max(1,...B.map(b=>b.annual));
+ $('hbTotal').textContent=B.length?`· ${GBP(tot)} a year`:'';$('hbYear').textContent=GBP(tot);$('hbMonth').textContent=GBP(tot/12);$('hbWeek').textContent=GBP(tot/52.18);
+ $('hbBody').innerHTML=B.length?B.map(b=>`<tr><td class="nm"><span class="av av-i" aria-hidden="true">${b.i}</span><span class="t">${esc(b.n)}<div class="hbar" aria-hidden="true"><i style="width:${(b.annual/mx*100).toFixed(1)}%"></i></div></span></td><td class="n">${GBP(b.monthly)}</td><td class="n"><b>${GBP(b.annual)}</b></td><td class="hide-m muted">${esc(b.basis)}${b.names.length?' · '+esc(b.names.join(', ')):''}</td></tr>`).join(''):'<tr><td colspan="4" class="muted">No household bills found yet. Council tax, energy, water, broadband, phone, TV licence and insurance show up here once they appear on a statement.</td></tr>'}
+function renderRenewals(){if(!$('renewCard'))return;const today=todayStr(),L=renewals.slice().sort((a,b)=>(a.due||'9').localeCompare(b.due||'9'));
+ const yearly=L.reduce((s,r)=>{const e=+r.every;return s+(+r.cost||0)*(e?12/e:(r.due&&diff(today,r.due)<=365&&diff(today,r.due)>=0?1:0))},0);$('rnTotal').textContent=L.length?`· ${plural(L.length,'item')} · about ${GBP(yearly)} a year`:'';
+ $('rnList').innerHTML=L.length?L.map(r=>{const k=RK[r.kind]||RK.other,dd=diff(today,r.due),lead=+r.remind||21,cls=dd<0?'up':dd<=lead?'late':'ok',e=+r.every;
+  return `<div class="rn" data-id="${esc(r.id)}"><span class="av av-i" aria-hidden="true">${k[0]}</span><div class="ri"><b>${esc(r.name)}</b> <span class="badge ${cls}">${dd<0?'overdue':inDays(r.due)}</span><div class="muted">${esc(k[1])} · ${fmtD(r.due)} ${r.due.slice(0,4)} · ${e===12?'yearly':e===1?'monthly':e?'every '+e+' months':'one-off'} · reminder ${lead} days before</div></div>
+  <input class="rncost" type="number" min="0" step="0.01" inputmode="decimal" value="${r.cost??''}" placeholder="Cost £" aria-label="Cost for ${esc(r.name)}"><button class="alt rnok" type="button"${e?'':' hidden'} aria-label="Mark ${esc(r.name)} as renewed">Renewed</button><button class="del rndel" type="button" aria-label="Delete ${esc(r.name)}">✕</button></div>`}).join(''):'<div class="muted">Nothing yet. Add car or home insurance, the MOT, TV licence, or when a fixed mortgage or energy deal ends, and Steve reminds you in time to shop around.</div>';
+ const SG=renewalSuggestions();$('rnSuggest').innerHTML=SG.length?'<span class="muted" style="align-self:center">Spotted:</span>'+SG.map((s,i)=>`<button type="button" class="chip rnsug" data-i="${i}">＋ ${esc(s.name)} · ${esc(RK[s.kind][1])} · ~${fmtD(s.due)}</button>`).join(''):'';renderRenewals._sg=SG;
+ const on=settings.remind&&'Notification'in window&&Notification.permission==='granted';$('rnNotify').textContent=on?'🔔 Reminders on':'🔔 Turn on reminders';$('rnNotify').setAttribute('aria-pressed',on?'true':'false');
+ if(!$('rnDue').value)$('rnDue').value=addMonths(today,1)}
+const DOWN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],DOWL=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+function renderPatterns(){if(!$('patternsCard'))return;const H=heatData();
+ if(!H){$('heat').innerHTML='<div class="muted">Import statements to see when you spend.</div>';$('dowBars').innerHTML='';$('heatNote').textContent='';$('flow').innerHTML='';return}
+ let h='<div class="hm" style="grid-template-columns:30px repeat(12,minmax(0,1fr))"><span></span>';for(let w=0;w<12;w++)h+=`<span class="hw">${w%3===0?fmtD(H.cells[w*7].d):''}</span>`;
+ for(let r=0;r<7;r++){h+=`<span class="hl">${DOWN[r]}</span>`;for(let w=0;w<12;w++){const c=H.cells[w*7+r],k=c.v==null?0:(c.v?0.12+0.88*Math.sqrt(c.v/H.max):0);h+=`<span class="hc${c.v==null?' na':''}" style="--k:${k.toFixed(2)}" title="${DOWN[r]} ${fmtD(c.d)}: ${c.v==null?'no data':GBP(c.v)}"></span>`}}
+ const mi=H.avg.indexOf(Math.max(...H.avg)),wk=(H.avg[0]+H.avg[1]+H.avg[2]+H.avg[3]+H.avg[4])/5,we=(H.avg[5]+H.avg[6])/2,amx=Math.max(1,...H.avg);
+ const sum=H.total?`You spend most on ${DOWL[mi]}s: about ${GBP(H.avg[mi])} a day. Weekdays average ${GBP(wk)}, weekends ${GBP(we)}.`:'No everyday spending in the last 12 weeks.';
+ $('heat').innerHTML=h+'</div>';$('heat').setAttribute('aria-label',`Heatmap of everyday spending by day, ${fmtD(H.start)} to ${fmtD(H.end)}. ${sum}`);
+ $('dowBars').innerHTML=`<div class="dow" aria-hidden="true">${H.avg.map((v,i)=>`<div class="${i===mi&&H.total?'top':''}"><span>${GBP(v).replace(/\.\d\d$/,'')}</span><i style="height:${(v/amx*62).toFixed(1)}px"></i><span>${DOWN[i]}</span></div>`).join('')}</div>`;
+ $('heatNote').textContent=sum+' Bills, rent and transfers are left out.';
+ let p=currentPeriod()||budgetPeriod(null),F=flowData(p);const small=innerWidth<760;if(!F.ti&&p){const i=PER.findIndex(x=>x.key===p.key);if(i>0){const G=flowData(PER[i-1]);if(G.ti){p=PER[i-1];F=G}}}$('flowLabel').textContent=p?'· '+p.label:'· all time';
+ $('flow').innerHTML=F.ti||F.to?sankeySVG(F,small)+`<div class="muted" style="margin-top:6px">${F.ti>=F.to?`${GBP(F.ti-F.to)} left over (${F.ti?((F.ti-F.to)/F.ti*100).toFixed(0):0}% of money in).`:`Spent ${GBP(F.to-F.ti)} more than came in.`} Transfers between your own accounts are not counted.</div>`:'<div class="muted">No money in or out in this period.</div>'}
+const NEWS=[['🧾','Self Assessment helper','Tag side-income and costs, see profit per tax year, payments on account and the 31 Jan / 31 Jul dates.','#saCard'],
+ ['💷','ISA allowance tracker','How much of this tax year’s £20,000 is left. ISA payments are picked up automatically.','#isaCard'],
+ ['🏠','Household bills per year','Council tax, energy, water, broadband, TV licence and insurance added up per month and per year.','#billsCard'],
+ ['🔔','Renewals and reminders','Insurance, MOT, TV licence, mortgage or energy deal end dates, with opt-in reminders and a calendar file.','#renewCard'],
+ ['🔮','What if…','Cut a category, change your pay or rent/mortgage, or add a one-off cost and watch the forecast and goal dates move.','#whatIfCard'],
+ ['⇄','Accounts, regular income and transfers','Money moved between your own accounts no longer counts as spending. Regular income and 4-weekly or last-working-day paydays are spotted.','#acctCard'],
+ ['🗓️','Spending patterns','A heatmap of when you spend, and a flow chart from money in to where it went.','#patternsCard'],
+ ['✨','Shop and bill icons','Familiar icons next to merchants, drawn on your device. Nothing is fetched.','#txCard']];
+function renderNews(){if(!$('newsDot'))return;$('newsDot').hidden=settings.seenNews===R7NEWS;
+ if(!$('wnList').dataset.done){$('wnList').innerHTML=NEWS.map(n=>`<li><span class="wi" aria-hidden="true">${n[0]}</span><div><b>${esc(n[1])}</b><span class="muted">${esc(n[2])}</span></div><button type="button" class="alt wngo" data-go="${n[3]}">Show me</button></li>`).join('');$('wnList').dataset.done='1'}}
+function openNews(){settings.seenNews=R7NEWS;saveSettings();renderNews();openModal('wnModal','#wnClose')}
+function renderR7(){renderAccounts();renderWhatIf();renderSA();renderISA();renderBills();renderRenewals();renderPatterns();renderNews();
+ const det=detectPayday();if(det&&det.rule&&settings.payday==='auto'&&$('paydayInfo'))$('paydayInfo').textContent=`Detected payday: ${det.label} (${det.src})`}
+
+// ---- onboarding tour
+const TOUR=[['#drop','Add your statements','Drop CSV, PDF, OFX or QIF exports from your bank. You always see a preview first, and nothing leaves this device.'],
+ ['#safeHero','Safe to spend','Type today’s balance and Steve takes off bills due before payday and what your goals need.'],
+ ['#budgetsCard','Budgets','Set a monthly amount for any category, or let Steve suggest them from your history.'],
+ ['#whatIfCard','What if…','Try a pay rise, a new mortgage or cutting a category before you commit to it.'],
+ ['#renewCard','Renewals','Add insurance, MOT and deal end dates and Steve reminds you in time to shop around.'],
+ ['#saCard','Tax helpers','Self Assessment totals and key dates, with your ISA allowance alongside.'],
+ ['#lockCard','Keep it private','Turn on the app lock to encrypt everything on this device with your passphrase.']];
+let TI=-1,_tourOpener=null;
+const tourSteps=()=>TOUR.filter(s=>{const e=document.querySelector(s[0]);return e&&e.getClientRects().length});
+function tourGo(i){const st=tourSteps();if(!st.length)return;if(i<0)i=0;if(i>=st.length){tourEnd(true);return}if(TI<0)_tourOpener=document.activeElement;TI=i;const[sel,t,d]=st[i],el=document.querySelector(sel);
+ $('tour').hidden=false;$('tourN').textContent=`Step ${i+1} of ${st.length}`;$('tourT').textContent=t;$('tourD').textContent=d;$('tourBack').disabled=i===0;$('tourNext').textContent=i===st.length-1?'Finish':'Next';
+ el.scrollIntoView({block:'center',behavior:RM.matches?'auto':'smooth'});tourPlace();setTimeout(tourPlace,RM.matches?40:420);$('tourNext').focus()}
+function tourPlace(){if(TI<0)return;const st=tourSteps(),s=st[TI],el=s&&document.querySelector(s[0]);if(!el)return;const r=el.getBoundingClientRect(),hl=$('tourHL'),pop=$('tourPop'),m=6,tb=innerWidth<760?70:0;
+ const top=Math.max(4,r.top-m),bot=Math.min(innerHeight-tb-4,r.bottom+m);Object.assign(hl.style,{top:top+'px',left:Math.max(4,r.left-m)+'px',width:Math.min(innerWidth-8,r.width+2*m)+'px',height:Math.max(40,bot-top)+'px'});
+ const pw=Math.min(360,innerWidth-24);pop.style.width=pw+'px';const ph=pop.offsetHeight;let y=bot+12;if(y+ph>innerHeight-tb-8)y=top-ph-12;if(y<8)y=innerHeight-tb-ph-12;
+ pop.style.top=Math.max(8,y)+'px';pop.style.left=Math.min(Math.max(12,r.left),innerWidth-pw-12)+'px'}
+function tourEnd(done){if(TI<0)return;TI=-1;$('tour').hidden=true;settings.toured=true;saveSettings();if(_tourOpener&&_tourOpener.focus&&document.contains(_tourOpener))_tourOpener.focus();_tourOpener=null;if(done)toast('That’s the tour. Find it again under ✨ or ?')}
+$('tourNext').onclick=()=>tourGo(TI+1);$('tourBack').onclick=()=>tourGo(TI-1);$('tourSkip').onclick=()=>tourEnd(false);
+addEventListener('resize',()=>tourPlace());addEventListener('scroll',()=>{if(TI>=0)requestAnimationFrame(tourPlace)},{passive:true});
+document.addEventListener('keydown',e=>{if(TI<0)return;if(e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();tourEnd(false)}else if(e.key==='ArrowRight'){tourGo(TI+1)}else if(e.key==='ArrowLeft'){tourGo(TI-1)}
+ else if(e.key==='Tab'){const f=[...$('tourPop').querySelectorAll('button:not([disabled])')];if(!f.length)return;const i=f.indexOf(document.activeElement);e.preventDefault();f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus()}},true);
+['tourBtn1','tourBtn2','wnTour'].forEach(id=>{if($(id))$(id).onclick=()=>{if(id==='wnTour')closeModal('wnModal');if(id==='tourBtn2')$('helpModal').classList.remove('show');setTimeout(()=>tourGo(0),60)}});
+$('newsBtn').onclick=openNews;$('wnClose').onclick=()=>closeModal('wnModal');
+$('wnList').onclick=e=>{const b=e.target.closest('.wngo');if(!b)return;closeModal('wnModal');const t=document.querySelector(b.dataset.go);if(t){t.scrollIntoView({block:'start',behavior:RM.matches?'auto':'smooth'});t.setAttribute('tabindex','-1');setTimeout(()=>t.focus({preventScroll:true}),RM.matches?0:400)}};
+
+// ---- events: accounts & transfers
+$('acctList').addEventListener('change',e=>{if(!e.target.classList.contains('abal'))return;const a=e.target.closest('.acct').dataset.a,v=e.target.value;settings.acctBal=settings.acctBal||{};
+ if(v==='')delete settings.acctBal[a];else settings.acctBal[a]={bal:Math.round(parseFloat(v)*100)/100,date:todayStr()};saveSettings();softRender()});
+$('acctList').addEventListener('click',e=>{if(!e.target.classList.contains('ause'))return;const a=accountList().find(x=>x.name===e.target.closest('.acct').dataset.a);if(!a||a.bal==null)return;settings.balance=a.bal;save();render();toast(`Forecast now starts from ${a.name}: ${GBP(a.bal)}`)});
+$('xferList').addEventListener('click',e=>{if(e.target.classList.contains('xun'))unlinkTransfer(e.target.closest('.xf-row').dataset.x)});
+$('autoXfer').onchange=e=>{settings.autoXfer=e.target.checked;if(!e.target.checked){pushUndo();tx.forEach(t=>{if(t.xfer){if(t.xferCat){t.cat=t.xferCat;delete t.xferCat}delete t.xfer}})}save();render();toast(e.target.checked?'Matching transfers between your accounts':'Transfer matching off')};
+// ---- what if
+let _wiT;const wiSet=(k,v)=>{WIo()[k]=v;clearTimeout(_wiT);_wiT=setTimeout(saveSettings,300);renderWhatIf()};
+$('wiCat').onchange=e=>wiSet('cat',e.target.value);$('wiPct').oninput=e=>wiSet('pct',+e.target.value);
+[['wiPay','pay'],['wiHouse','house'],['wiOne','one'],['wiOneDate','oneDate']].forEach(([id,k])=>$(id).addEventListener('input',e=>wiSet(k,e.target.value)));
+$('wiReset').onclick=()=>{settings.whatIf={cat:'',pct:0,pay:'',house:'',one:'',oneDate:''};saveSettings();renderWhatIf();toast('Scenario cleared')};
+// ---- Self Assessment
+$('saYear').onchange=()=>renderSA();
+function saTag(tag){const rows=VROWS.slice();if(!rows.length){toast('No transactions in the list. Use the filters first.');return}
+ if(rows.length>40&&!confirm(`${tag?'Tag':'Clear SA tags on'} all ${rows.length} transactions shown in the list?`))return;pushUndo();
+ rows.forEach(t=>{const tg=(t.tags||[]).filter(x=>x!=='sa-income'&&x!=='sa-expense');if(tag)tg.push(tag);else t.noSa=true;t.tags=tg});save();render();
+ toast(`${tag?'Tagged':'Cleared'} ${plural(rows.length,'transaction')}${tag?' as '+(tag==='sa-income'?'SA income':'SA expense'):''}`,'Undo',undo)}
+$('saTagInc').onclick=()=>saTag('sa-income');$('saTagExp').onclick=()=>saTag('sa-expense');$('saTagClr').onclick=()=>saTag(null);
+$('saRuleForm').onsubmit=e=>{e.preventDefault();const v=$('saRuleVal').value.trim();if(!v)return;pushUndo();SAo().rules.push({val:v,tag:$('saRuleTag').value});const n=applySaRules();save();$('saRuleVal').value='';render();toast(`Rule added · ${plural(n,'transaction')} tagged`,'Undo',undo)};
+$('saRules').onclick=e=>{const b=e.target.closest('.sarx');if(!b)return;SAo().rules.splice(+b.dataset.i,1);save();render()};
+$('saLast').onchange=e=>{SAo().lastBill=e.target.value===''?'':Math.max(0,+e.target.value);save();render()};
+$('saPct').onchange=e=>{SAo().pct=Math.min(60,Math.max(0,+e.target.value||0));save();render()};
+$('saMtd').onchange=e=>{SAo().mtd=e.target.checked;save();render()};
+$('saCsv').onclick=()=>{const y=taxRange($('saYear').value),r=saYear(y),rows=[...r.inc.map(t=>['Income',t]),...r.exp.map(t=>['Expense',t])].sort((a,b)=>a[1].date.localeCompare(b[1].date));
+ download(`steve-self-assessment-${y.key}.csv`,Papa.unparse({fields:['Date','Type','Account','Description','Category','Amount','Notes'],data:rows.map(([k,t])=>[t.date,k,t.acct,t.desc,t.cat,t.amt.toFixed(2),t.notes||''])}),'text/csv')};
+$('saPot').onclick=()=>{const S=SAo(),y=taxRange($('saYear').value),r=saYear(y),amt=Math.round(Math.max(+S.lastBill||0,Math.max(0,r.profit)*(+S.pct||0)/100));const due=saKeyDates().find(x=>x.k==='jan');
+ if(!amt){toast('Tag some SA income or enter last year’s bill first');return}if(goals.some(g=>g.name==='Tax bill '+y.label)){toast('You already have a tax pot for '+y.label);return}
+ pushUndo();goals.push({id:'g'+rid(),name:'Tax bill '+y.label,target:amt,saved:0,deadline:due?due.date:addMonths(todayStr(),3),kind:'goal',log:[]});saveGoals();render();toast(`Pot “Tax bill ${y.label}” added: ${GBP(amt)}`,'Undo',undo)};
+// ---- ISA
+$('isaYear').onchange=()=>renderISA();
+$('isaForm').onsubmit=e=>{e.preventDefault();const a=+$('isaAmt').value;if(!(a>0))return;isaLog.push({id:'i'+rid(),date:$('isaDate').value||todayStr(),amt:Math.round(a*100)/100,type:$('isaType').value,provider:$('isaProv').value.trim()});saveR7();$('isaAmt').value='';$('isaProv').value='';renderISA();toast('ISA payment added')};
+$('isaBody').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.classList.contains('isadel')){const i=isaLog.findIndex(x=>x.id===b.dataset.id);if(i<0)return;const [old]=isaLog.splice(i,1);saveR7();renderISA();toast('ISA payment removed','Undo',()=>{isaLog.splice(i,0,old);saveR7();renderISA()})}
+ if(b.classList.contains('isano')){const t=tx.find(t=>txKey(t)===b.dataset.k);if(!t)return;pushUndo();t.noIsa=true;save();render();toast('Not counted as an ISA payment','Undo',undo)}});
+// ---- renewals
+$('rnKind').innerHTML=Object.entries(RK).map(([k,v])=>`<option value="${k}">${v[0]} ${esc(v[1])}</option>`).join('');
+$('rnKind').onchange=e=>{const v=e.target.value;if(!$('rnName').value)$('rnName').placeholder=RK[v][1];$('rnEvery').value=['phone','energy','mortgage'].includes(v)?'0':'12'};
+$('rnForm').onsubmit=e=>{e.preventDefault();const k=$('rnKind').value,name=$('rnName').value.trim()||RK[k][1],due=$('rnDue').value;if(!due)return;
+ renewals.push({id:'r'+rid(),name,kind:k,due,cost:$('rnCost').value===''?'':Math.round(+$('rnCost').value*100)/100,every:+$('rnEvery').value,remind:+$('rnRemind').value});saveR7();$('rnName').value='';$('rnCost').value='';render();toast(`${name} added · reminder ${$('rnRemind').value} days before`)};
+$('rnList').addEventListener('change',e=>{if(!e.target.classList.contains('rncost'))return;const r=renewals.find(x=>x.id===e.target.closest('.rn').dataset.id);if(!r)return;r.cost=e.target.value===''?'':Math.round(+e.target.value*100)/100;saveR7();renderRenewals()});
+$('rnList').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const id=b.closest('.rn').dataset.id,i=renewals.findIndex(x=>x.id===id),r=renewals[i];if(!r)return;
+ if(b.classList.contains('rndel')){renewals.splice(i,1);saveR7();render();toast(`${r.name} removed`,'Undo',()=>{renewals.splice(i,0,r);saveR7();render()});return}
+ if(b.classList.contains('rnok')){const prev=r.due,e=+r.every||12;let d=r.due,n=0;do{d=addMonths(d,e)}while(d<=todayStr()&&n++<50);r.due=d;r.last=todayStr();saveR7();render();toast(`${r.name}: next renewal ${fmtD(d)} ${d.slice(0,4)}`,'Undo',()=>{r.due=prev;saveR7();render()})}});
+$('rnSuggest').onclick=e=>{const b=e.target.closest('.rnsug');if(!b)return;const s=(renderRenewals._sg||[])[+b.dataset.i];if(!s)return;
+ renewals.push({id:'r'+rid(),name:s.name,kind:s.kind,due:s.due,cost:Math.round(s.cost*100)/100,every:12,remind:21,src:s.src});saveR7();render();toast(`${s.name} added to renewals`)};
+$('rnIcs').onclick=()=>{if(!renewals.length){$('rnMsg').textContent='Add a renewal first.';return}download('steve-renewals.ics',renewalsICS(),'text/calendar');$('rnMsg').textContent='Calendar file saved. Open it to add the dates, with alerts, to your phone or computer calendar.'};
+$('rnNotify').onclick=async()=>{if(settings.remind&&'Notification'in window&&Notification.permission==='granted'){settings.remind=false;save();renderRenewals();$('rnMsg').textContent='Reminders off. Renewals still show in the alerts at the top.';return}
+ if(!('Notification'in window)){$('rnMsg').textContent='This browser can’t show notifications. Renewals still show in the alerts at the top of Steve.';return}
+ let p=Notification.permission;if(p!=='granted')p=await Notification.requestPermission();if(p!=='granted'){$('rnMsg').textContent='Notifications weren’t allowed. Renewals still show in the alerts at the top of Steve.';return}
+ settings.remind=true;save();renderRenewals();const n=await notifyR7();$('rnMsg').textContent=`Reminders on.${n?' Sent '+plural(n,'reminder')+' now.':''} They pop up when you open Steve (or while it’s open). With no server, a phone can’t wake Steve by itself, so the calendar file is the belt-and-braces option.`};
+setTimeout(()=>notifyR7(),900);setInterval(()=>notifyR7(),3600e3);document.addEventListener('visibilitychange',()=>{if(!document.hidden)notifyR7()});
+
+// ---- backup v6 (renewals + ISA log) and render hook
+const _migrate5=migrateBackup;migrateBackup=function(d){const v=+(d&&d.version)||1;d=_migrate5(d);if(v<6){d.renewals=Array.isArray(d.renewals)?d.renewals:[];d.isaLog=Array.isArray(d.isaLog)?d.isaLog:[]}d.migratedFrom=v;d.version=6;return d};
+const _merge6=mergeBackup;mergeBackup=function(d){const n=_merge6(d),m=(cur,inc)=>{const ids=new Set(cur.map(x=>x.id));(Array.isArray(inc)?inc:[]).forEach(x=>{if(x&&x.id&&!ids.has(x.id)){cur.push(x);ids.add(x.id)}})};m(renewals,d.renewals);m(isaLog,d.isaLog);saveR7();return n};
+const _renderTx6=renderTx;renderTx=function(f){_renderTx6(f);if($('saShown'))$('saShown').textContent=VROWS.length.toLocaleString('en-GB')};
+const _render6=render;render=function(){if(_xv!==DATA_VER){const a=matchTransfers(),b=applySaRules();if(a||b)save();_xv=DATA_VER}_render6();renderR7()};
+// Keep keyboard focus when a re-render swaps the row you just tabbed into (e.g. budget £ inputs): without this,
+// Tab from one budget to the next lost focus and the next value typed went nowhere.
+const _render7=render;render=function(){const a=document.activeElement;let k=null,st=null,en=null;
+ if(a&&a!==document.body&&!a.id&&a.matches&&a.matches('input[data-c],select[data-c]')){k=`${a.tagName.toLowerCase()}[data-c="${CSS.escape(a.dataset.c)}"]${a.classList[0]?'.'+CSS.escape(a.classList[0]):''}`;try{st=a.selectionStart;en=a.selectionEnd}catch(e){}}
+ _render7();
+ if(k&&!document.body.contains(a)){const n=document.querySelector(k);if(n){n.focus({preventScroll:true});try{if(st!=null)n.setSelectionRange(st,en)}catch(e){}}}};
+
+window.steve={matchTransfers,recurringIncome,accountList,householdBills,renewalSuggestions,dueReminders,renewalsICS,whatIf,saYear,saKeyDates,isaRows,heatData,flowData,sankeySVG,mIcon,workBack,lastWorkday,detectPayday,nextPayday,tourGo,tourEnd,migrateBackup,detectLayout,applyMap,csvGrid,classifyRows,catChanges,leaderboard,unusualTx,priceChanges,buildReport,debtPlan,encryptBackup,decryptBackup,mergeBackup,payload,parsePdfLines,fromOFX,fromQIF,buildTips,taxYears,taxRange,inTax,recurring,monthlyBasis,goalStatus,safeToSpend,forecast,ruleMatch,applyRulesTo,parts,flatten,budgetRows,rolledIn,spendIn,yearReview,nwNow,snapWorth,undo,redo,pushUndo,allCats};
 setTheme(document.documentElement.dataset.theme||'dark');setTimeout(maybeNotify,500);
 </script>
 <script>
